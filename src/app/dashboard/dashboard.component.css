@@ -1,0 +1,42 @@
+.sidebar-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.sidebar-nav-button:hover{
+    background-color: rgba(255, 255, 255,0.2);
+    border-radius: 30%;
+}
+main{
+    position: absolute;
+    width: 100%;
+    top: 3.5rem;
+    z-index: 1;
+}
+
+app-dash-sidebar{
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    box-shadow: 0px 0px 10px rgba(0, 0,0, 0);
+    background-color: rgba(34, 34, 34, 1);
+    border-top: 1px solid white;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+.display-area{
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+}
+.side-nav-list-open{
+    width: 250px;
+}
+
+.display-mode {
+    width: calc(100% - 250px);
+    left: 250px;
+}

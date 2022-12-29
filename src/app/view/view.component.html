@@ -1,0 +1,57 @@
+
+<!-- <div>
+    <h4>Withdraw Amount</h4>
+
+<div class="display-Area">
+  <br>  <h6>Account Number</h6>
+<input type = "text" class = "style"  placeholder="Account Number"   required/><br>
+<h6>Withdraw Date</h6>
+<input type = "text"class = "style"   placeholder="Withdraw Date"   required/><br>
+<h6>Amount</h6>
+<input type = "text" class = "style"  placeholder="Amount"   required/><br>
+<h6>Source</h6>
+<input type = "text" class = "style"  placeholder="Source"   required/><br>
+<h6>Transaction Id</h6>
+<input type = "text" class = "style"   placeholder="Transaction Id"   required/><br><br>
+
+<button>Ok</button>   
+<button>Cancel</button> 
+</div>  
+</div>        -->
+<!-- <form><div class="form-row"><div class="form-group col-md-6"><label for="inputEmail4">Email</label><input type="email" class="form-control" id="inputEmail4" placeholder="Email"></div><div class="form-group col-md-6"><label for="inputPassword4">Password</label><input type="password" class="form-control" id="inputPassword4" placeholder="Password"></div></div><div class="form-group"><label for="inputAddress">Address</label><input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></div><div class="form-group"><label for="inputAddress2">Address 2</label><input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></div><div class="form-row"><div class="form-group col-md-6"><label for="inputCity">City</label><input type="text" class="form-control" id="inputCity"></div><div class="form-group col-md-4"><label for="inputState">State</label><select id="inputState" class="form-control"><option selected>Choose...</option><option>...</option></select></div><div class="form-group col-md-2"><label for="inputZip">Zip</label><input type="text" class="form-control" id="inputZip"></div></div><div class="form-group"><div class="form-check"><input class="form-check-input" type="checkbox" id="gridCheck"><label class="form-check-label" for="gridCheck">
+    Check me out
+  </label></div></div><button type="submit" class="btn btn-primary">Sign in</button></form>
+    -->
+    <div class="navbuttons btn-group mt-3">
+      <button type="button" class="btn btn-dark">Transactions</button>
+      <button type="button" class="btn btn-dark" routerLink="Savings">Savings</button>
+      <button type="button" class="btn btn-dark" routerLink="Deposit">Deposit</button>
+      <button type="button" class="btn btn-dark">Withdraw</button>
+      <button type="button" class="btn btn-dark">Loan</button>
+      <button type="button" class="btn btn-dark">EMI</button>
+      </div>
+    
+    <div>
+        <h4>Withdraw Amount</h4><br>
+    <form (ngSubmit) = "getvaule(product)" #product="ngForm" >
+
+        <span *ngIf = "number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Account Number</span>
+        <input type = "text" class="form-control" placeholder="Account Number" ngModel name="Account Number" #number = "ngModel" required/><br>
+        
+        <span *ngIf = "WithdrawDate.invalid && WithdrawDate.touched" style="color: red ; font-size: 20px;">Enter Withdraw Date</span>
+        <input type = "date" class="form-control" placeholder="Withdraw Date" ngModel name="Withdraw Date" #WithdrawDate = "ngModel" required /><br>
+    
+        <span *ngIf = "Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Amount</span>
+        <input type = "number" class="form-control" placeholder="Amount" ngModel name="Amount" #Amount = "ngModel" required /><br>
+       
+    
+        <span *ngIf = "Source.invalid && Source.touched" style="color: red ; font-size: 20px;">Enter Source</span>
+        <input type = "text" class="form-control" placeholder="Source" ngModel name="Source" #Source = "ngModel" required /><br>
+        
+        <span *ngIf = "Id.invalid && Id.touched" style="color: red ; font-size: 20px;">Enter Transaction Id</span>
+        <input type = "text" class="form-control" placeholder="Transaction Id" ngModel name="Transaction Id" #Id = "ngModel" required /><br>
+        
+        <button class="btn btn-primary" [disabled] = "!product.valid">Add</button>
+
+      </form>
+    </div>

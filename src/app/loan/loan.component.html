@@ -1,0 +1,35 @@
+<div class="navbuttons btn-group mt-3">
+  <button type="button" class="btn btn-blue" routerLink="">Transactions</button>
+  <button type="button" class="btn btn-red" routerLink="Savings">Savings</button>
+  <button type="button" class="btn btn-dark" routerLink="Deposit">Deposit</button>
+  <button type="button" class="btn btn-dark" routerLink="Withdraw">Withdraw</button>
+  <button type="button" class="btn btn-dark">Loan</button>
+  <button type="button" class="btn btn-dark">EMI</button>
+  </div>
+
+<div>
+    <h4>Loan Account</h4><br>
+<form (ngSubmit) = "getvaule(product)" #product="ngForm" >
+   <span *ngIf = "number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Account Type</span>
+   <input type = "text" class="form-control" placeholder="Account Type" ngModel name="Account Number" #number = "ngModel" required/><br>
+
+    <span *ngIf = "number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Account SubType</span>
+    <input type = "text" class="form-control" placeholder="Account SubType" ngModel name="Account Number" #number = "ngModel" required/><br>
+    
+    <span *ngIf = "WithdrawDate.invalid && WithdrawDate.touched" style="color: red ; font-size: 20px;">Enter Account Number</span>
+    <input type = "date" class="form-control" placeholder="Account Number" ngModel name="Withdraw Date" #WithdrawDate = "ngModel" required /><br>
+
+    <span *ngIf = "Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Loan Amount</span>
+    <input type = "number" class="form-control" placeholder="Loan Amount" ngModel name="Amount" #Amount = "ngModel" required /><br>
+   
+    <span *ngIf = "Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Rate Of Interest</span>
+    <input type = "number" class="form-control" placeholder="Rate Of Interest" ngModel name="Amount" #Amount = "ngModel" required /><br>
+
+    <span *ngIf = "Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Loan Duration</span>
+    <input type = "number" class="form-control" placeholder="Loan Duration" ngModel name="Amount" #Amount = "ngModel" required /><br>
+
+    
+    <button class="btn btn-primary" [disabled] = "!product.valid">Add</button>
+
+  </form>
+</div>
