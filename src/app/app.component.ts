@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
+import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'JKTechBank';
+ 
 }

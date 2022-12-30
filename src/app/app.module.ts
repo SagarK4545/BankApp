@@ -13,11 +13,14 @@ import { DepositeComponent } from './deposite/deposite.component';
 import { SavingAccountComponent } from './saving-account/saving-account.component';
 import { LoanComponent } from './loan/loan.component';
 import { HeaderComponent } from './header/header.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 import { MsalGuard, MsalInterceptor, MsalModule, MsalRedirectComponent, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 // Import the Azure AD B2C configuration 
 import { msalConfig, protectedResources } from './auth-config';
+import { TransactionsComponent } from './transactions/transactions.component';
+
 
 export function MSALInstanceFactory():IPublicClientApplication{
 
@@ -46,13 +49,16 @@ export function MSALInstanceFactory():IPublicClientApplication{
     DepositeComponent,
     SavingAccountComponent,
     LoanComponent,
-    HeaderComponent
+    HeaderComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
+    AgGridModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+    
   ],
   providers: [InformationService, {
     provide:MSAL_INSTANCE,

@@ -6,10 +6,11 @@ import { HeaderComponent } from './header/header.component';
 import { LoanComponent } from './loan/loan.component';
 import { SavingAccountComponent } from './saving-account/saving-account.component';
 import { ViewComponent } from './view/view.component';
-
+import { TransactionsComponent } from './transactions/transactions.component';
 const routes: Routes = [
   {path : 'Login', component:HeaderComponent},
   {path : '' , component:DashboardComponent},
+  {path : 'Transactions', component:TransactionsComponent},
   {path: 'Savings', component:SavingAccountComponent},
   {path: 'Loans', component:LoanComponent},
   {path: 'Deposit', component:DepositeComponent},
