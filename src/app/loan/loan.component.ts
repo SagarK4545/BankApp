@@ -14,7 +14,7 @@ export class LoanComponent {
     
     this.addwithdraw = data.value
   
- // this.info.addProducts(this.addwithdraw).subscribe(x => console.log(x))
+    //this.info.addProducts(this.addwithdraw).subscribe(x => console.log(x))
   
    }
 }

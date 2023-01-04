@@ -16,40 +16,52 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-8" style="background-color:rgb(235, 156, 181);">
-      <div class="navbuttons btn-group mt-3">
-      <button type="button" class="btn btn-dark">Transactions</button>
-      <button type="button" class="btn btn-dark">Savings</button>
-      <button type="button" class="btn btn-dark">Deposit</button>
-      <button type="button" class="btn btn-dark">Withdraw</button>
-      <button type="button" class="btn btn-dark">Loan</button>
-      <button type="button" class="btn btn-dark">EMI</button>
-      </div>
     
-    <div>
-        <h4>Deposite Amount</h4><br>
-    <form (ngSubmit) = "getvaule(product)" #product="ngForm" >
-    
-        <span *ngIf = "number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Account Number</span>
-        <input type = "text" class="form-control" placeholder="Account Number" ngModel name="Account Number" #number = "ngModel" required/><br>
-        
-        <span *ngIf = "WithdrawDate.invalid && WithdrawDate.touched" style="color: red ; font-size: 20px;">Enter Withdraw Date</span>
-        <input type = "date" class="form-control" placeholder="Withdraw Date" ngModel name="Withdraw Date" #WithdrawDate = "ngModel" required /><br>
-    
-        <span *ngIf = "Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Amount</span>
-        <input type = "number" class="form-control" placeholder="Amount" ngModel name="Amount" #Amount = "ngModel" required /><br>
-       
-    
-        <span *ngIf = "Source.invalid && Source.touched" style="color: red ; font-size: 20px;">Enter Source</span>
-        <input type = "text" class="form-control" placeholder="Source" ngModel name="Source" #Source = "ngModel" required /><br>
-        
-        <span *ngIf = "Id.invalid && Id.touched" style="color: red ; font-size: 20px;">Enter Transaction Id</span>
-        <input type = "text" class="form-control" placeholder="Transaction Id" ngModel name="Transaction Id" #Id = "ngModel" required /><br>
-        
-        <button class="btn btn-primary" [disabled] = "!product.valid">Add</button>
-    
-       </form>
-     </div>
+    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">
+      <p>You can use alternative markup without <code>ul li</code> elements</p>
+
+<nav ngbNav #nav="ngbNav" class="nav-tabs" routerLink="Transactions">
+	<ng-container ngbNavItem>
+		<a ngbNavLink>Transactions</a>
+		<ng-template ngbNavContent>
+      <app-transactions></app-transactions>
+		  	
+		</ng-template>
+	</ng-container>
+	<ng-container ngbNavItem>
+		<a ngbNavLink>Savings</a>
+		<ng-template ngbNavContent>
+      <app-saving-account></app-saving-account>
+		</ng-template>
+	</ng-container>
+	<ng-container ngbNavItem>
+		<a ngbNavLink>Loans</a>
+		<ng-template ngbNavContent>
+      <app-saving-account></app-saving-account>
+			<p>
+				Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+				Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+				Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
+				egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
+				tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+				magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
+				neque. Phasellus nec tortor vel tellus pulvinar feugiat.
+			</p>
+		</ng-template>
+	</ng-container>
+</nav>
+
+<div [ngbNavOutlet]="nav" class="mt-2">
+  <!-- Vertically centered modal -->
+<div class="modal-dialog modal-dialog-centered">
+  ...
+</div>
+
+<!-- Vertically centered scrollable modal -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  ...
+</div>
+</div>
    </div>
   </div>
 

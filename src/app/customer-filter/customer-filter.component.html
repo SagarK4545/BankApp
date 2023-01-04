@@ -1,0 +1,88 @@
+<div id="piechart">
+	<h2>Customer Search</h2>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Work', 8],
+  ['Eat', 2],
+  ['TV', 4],
+  ['Gym', 2],
+  ['Sleep', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+
+<div class="ng-container">
+
+
+<form>
+	<div class="mb-3 row">
+		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+		<div class="col-xs-3 col-sm-auto">
+			<input
+				id="table-complete-search"
+				type="text"
+				class="form-control"
+				name="searchTerm"
+				[(ngModel)]="service.searchTerm"
+			/>
+		</div>
+		<span class="col col-form-label" *ngIf="service.loading$ | async">Loading...</span>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col" sortable="name" >Country</th>
+				<th scope="col" sortable="area" >Area</th>
+				<th scope="col" sortable="population" >Population</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let country of countries$ | async">
+				<th scope="row">{{ country.id }}</th>
+				<td>
+					<img
+						[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+						class="me-2"
+						style="width: 20px"
+					/>
+					<ngb-highlight [result]="country.name" [term]="service.searchTerm"></ngb-highlight>
+				</td>
+				<td><ngb-highlight [result]="country.area | number" [term]="service.searchTerm"></ngb-highlight></td>
+				<td><ngb-highlight [result]="country.population | number" [term]="service.searchTerm"></ngb-highlight></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="d-flex justify-content-between p-2">
+		<ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+		</ngb-pagination>
+
+		<select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+			<option [ngValue]="2">2 items per page</option>
+			<option [ngValue]="4">4 items per page</option>
+			<option [ngValue]="6">6 items per page</option>
+		</select>
+	</div>
+</form>
+</div>

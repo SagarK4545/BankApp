@@ -41,7 +41,7 @@
       </div>
       </div>
 
-      <div class="col-sm-8" style="background-color:rgb(235, 156, 181);">
+      <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">
         <div class="navbuttons btn-group mt-3">
           <button type="button" class="btn btn-dark" routerLink="Transactions">Transactions</button>
           <button type="button" class="btn btn-dark" routerLink="Savings">Savings</button>
@@ -52,12 +52,12 @@
         </div>
 
         <div>
-          <h4>Withdraw Amount</h4><br>
+          <h4>Withdraw Amount {{responsejson.Balance}}</h4><br>
           <form (ngSubmit)="getvaule(product)" #product="ngForm">
 
             <span *ngIf="number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Account
               Number</span>
-            <input type="text" class="form-control" placeholder="Account Number" ngModel name="Account Number"
+            <input type="text" class="form-control" placeholder="Account Number" ngModel name="acctnum"
               #number="ngModel" required /><br>
 
             <span *ngIf="WithdrawDate.invalid && WithdrawDate.touched" style="color: red ; font-size: 20px;">Enter
@@ -66,7 +66,7 @@
               #WithdrawDate="ngModel" required /><br>
 
             <span *ngIf="Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Enter Amount</span>
-            <input type="number" class="form-control" placeholder="Amount" ngModel name="Amount" #Amount="ngModel"
+            <input type="number" class="form-control" placeholder="Amount" ngModel name="withdrawamount" #Amount="ngModel"
               required /><br>
 
 
@@ -79,8 +79,12 @@
               #Id="ngModel" required /><br>
 
             <button class="btn btn-primary" [disabled]="!product.valid">Add</button>
-
+             
           </form>
         </div>
       </div>
-    </div>
+
+      <!-- Button trigger modal -->
+ </div>
+
+    

@@ -1,7 +1,27 @@
-<p>transactions works!</p>
-<ag-grid-angular 
-    style="width: 500px; height: 200px;" 
-    class="ag-theme-alpine"
-    [rowData]="rowData" 
-    [columnDefs]="columnDefs">
-</ag-grid-angular>
+<p>Table is just a mapping of objects to table rows with <code>ngFor</code></p>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Country</th>
+			<th scope="col">Amount</th>
+			<th scope="col">Account Number</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let country of countries; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<img
+					[src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+					class="me-2"
+					style="width: 20px"
+				/>
+				{{ country.name }}
+			</td>
+			<td>{{ country.amount | number }}</td>
+			<td>{{ country.accountnumber | number }}</td>
+		</tr>
+	</tbody>
+</table>

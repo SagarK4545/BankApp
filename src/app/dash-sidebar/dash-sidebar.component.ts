@@ -12,7 +12,7 @@ export class DashSidebarComponent {
 listItem = [
   {
     icon: 'fa-solid fa-inbox',
-    name: "Customer Info"
+    name: "CustomerInfo"
   },
   {
     icon: 'fa-sharp fa-solid fa-plus',

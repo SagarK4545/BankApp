@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashSidebarComponent } from './dash-sidebar/dash-sidebar.component';
 import { ViewComponent } from './view/view.component';
-import { DepositeComponent } from './deposite/deposite.component';
+
 import { SavingAccountComponent } from './saving-account/saving-account.component';
 import { LoanComponent } from './loan/loan.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,9 +20,23 @@ import { InteractionType, IPublicClientApplication, PublicClientApplication } fr
 // Import the Azure AD B2C configuration 
 import { msalConfig, protectedResources } from './auth-config';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { RootComponent } from './root/root.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { COUNTRIES } from './customer-filter/countries';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { PayEMIComponent } from './pay-emi/pay-emi.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { CustomerFilterComponent } from './customer-filter/customer-filter.component';
+import { DepositeComponent } from './deposite/deposite.component';
+
+import {bootstrapApplication} from '@angular/platform-browser';
+import {NgbdModalOptions} from './view/modal-options';
 
 
-export function MSALInstanceFactory():IPublicClientApplication{
+
+
+export function MSALInstanceFactory():IPublicClientApplication{ 
 
   return new PublicClientApplication({
 
@@ -46,19 +60,25 @@ export function MSALInstanceFactory():IPublicClientApplication{
     DashboardComponent,
     DashSidebarComponent,
     ViewComponent,
-    DepositeComponent,
-    SavingAccountComponent,
     LoanComponent,
     HeaderComponent,
-    TransactionsComponent
+    RootComponent,
+    AddCustomerComponent,
+    UpdateCustomerComponent,
+    PayEMIComponent,
+    
   ],
   imports: [
     BrowserModule,
     AgGridModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    NgbModule,
+    CustomerFilterComponent,
+    DepositeComponent,
+    TransactionsComponent,
+    SavingAccountComponent
   ],
   providers: [InformationService, {
     provide:MSAL_INSTANCE,

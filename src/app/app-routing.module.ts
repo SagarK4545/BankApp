@@ -7,7 +7,12 @@ import { LoanComponent } from './loan/loan.component';
 import { SavingAccountComponent } from './saving-account/saving-account.component';
 import { ViewComponent } from './view/view.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { CustomerFilterComponent } from './customer-filter/customer-filter.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+
 const routes: Routes = [
+  { path : 'CustomerInfo', component:CustomerFilterComponent},
+  { path : 'AddCustomer', component:AddCustomerComponent},
   {path : 'Login', component:HeaderComponent},
   {path : '' , component:DashboardComponent},
   {path : 'Transactions', component:TransactionsComponent},
