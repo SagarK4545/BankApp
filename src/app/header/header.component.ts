@@ -6,7 +6,8 @@ import { AuthenticationResult } from '@azure/msal-browser';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers:[MsalService]
 })
 export class HeaderComponent implements OnInit{
   constructor(private msalService:MsalService){

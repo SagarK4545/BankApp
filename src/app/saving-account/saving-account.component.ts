@@ -3,8 +3,7 @@ import { InformationService } from '../information.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 @Component({
-  selector: 'app-saving-account',
-  standalone :true,
+  selector: '[app-saving-account]',
   templateUrl: './saving-account.component.html',
   styleUrls: ['./saving-account.component.css'],
   encapsulation: ViewEncapsulation.None,

@@ -6,8 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashSidebarComponent } from './dash-sidebar/dash-sidebar.component';
 import { ViewComponent } from './view/view.component';
 
 import { SavingAccountComponent } from './saving-account/saving-account.component';
@@ -32,6 +30,8 @@ import { DepositeComponent } from './deposite/deposite.component';
 
 import {bootstrapApplication} from '@angular/platform-browser';
 import {NgbdModalOptions} from './view/modal-options';
+import { NewbashboardComponent } from './newbashboard/newbashboard.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -57,8 +57,6 @@ export function MSALInstanceFactory():IPublicClientApplication{
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    DashSidebarComponent,
     ViewComponent,
     LoanComponent,
     HeaderComponent,
@@ -66,6 +64,8 @@ export function MSALInstanceFactory():IPublicClientApplication{
     AddCustomerComponent,
     UpdateCustomerComponent,
     PayEMIComponent,
+    NewbashboardComponent,
+    SavingAccountComponent,
     
   ],
   imports: [
@@ -78,7 +78,7 @@ export function MSALInstanceFactory():IPublicClientApplication{
     CustomerFilterComponent,
     DepositeComponent,
     TransactionsComponent,
-    SavingAccountComponent
+    RouterModule
   ],
   providers: [InformationService, {
     provide:MSAL_INSTANCE,

@@ -1,5 +1,36 @@
+
 <div class="container-fluid">
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search Customer" aria-label="Search" aria-describedby="search-addon" />
+    <input type="search" class="form-control rounded" placeholder="Select Account Number">
+    <select class="select btn-dark" data-mdb-filter="true">
+      <option value="1">Savings</option>
+      <option value="2">Loan</option>
+      
+    </select>
+    <button type="button" class="btn btn-outline-primary">search</button>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-4" style="background-color:rgb(61, 61, 73);"><span style=color:blue;>CustomerInfo</span>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+            <div class="mt-3">
+              <h4>John Doe</h4>
+              <p class="text-secondary mb-1" class="Balance">Balance :12000000</p>
+              <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+              <button class="btn btn-success">Active</button>
+              <button class="btn btn-outline-primary">Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">    
 <form>
+  <p>Savings Account</p>
   <div class="row">
     <div class="form-group col">
       <label for="inputEmail4">Account Number</label>
@@ -31,12 +62,11 @@
 <br>
 <div class="d-grid gap-2 d-md-flex justify-content-md-md">
   
-  <button class="btn btn-dark" >
-    Deposit
+  <button class="btn btn-dark" routerLink="/Deposit">Deposit
   </button>
-  <button type="button" class="btn btn-dark" routerLink="Withdraw">Withdraw</button>
+  <button type="button" class="btn btn-dark" routerLink="/Withdraw">Withdraw</button>
 </div>
 
 </form>
 </div>
-
+</div>

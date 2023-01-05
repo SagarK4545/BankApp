@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DepositeComponent } from './deposite.component';
@@ -8,7 +9,8 @@ describe('DepositeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DepositeComponent ]
+      imports : [HttpClientTestingModule,DepositeComponent],
+      declarations: [  ]
     })
     .compileComponents();
 

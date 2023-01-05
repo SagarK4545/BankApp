@@ -15,3 +15,8 @@
 .Balance{
     color:brown;
 }
+.modal.show{
+
+    display: block;
+
+}

@@ -45,6 +45,7 @@ function drawChart() {
 				[(ngModel)]="service.searchTerm"
 			/>
 		</div>
+		
 		<span class="col col-form-label" *ngIf="service.loading$ | async">Loading...</span>
 	</div>
 

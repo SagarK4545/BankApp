@@ -1,0 +1,32 @@
+.sidebar {
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    background:rgb(61, 61, 73);
+    
+  }
+  
+  .main-layout {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  ul li {
+    list-style-type:square;
+    padding: 20px 20px;
+    color:white;
+  }
+  
+  header {
+    background: rgb(83, 126, 96);
+    color: rgb(60, 71, 80);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  header button {
+    margin-right: 20px;
+  }
+  
