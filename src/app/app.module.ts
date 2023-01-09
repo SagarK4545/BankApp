@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ViewComponent } from './view/view.component';
 
 import { SavingAccountComponent } from './saving-account/saving-account.component';
 import { LoanComponent } from './loan/loan.component';
@@ -20,7 +19,7 @@ import { msalConfig, protectedResources } from './auth-config';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { RootComponent } from './root/root.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbNavOutlet } from '@ng-bootstrap/ng-bootstrap';
 import { COUNTRIES } from './customer-filter/countries';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { PayEMIComponent } from './pay-emi/pay-emi.component';
@@ -29,11 +28,13 @@ import { CustomerFilterComponent } from './customer-filter/customer-filter.compo
 import { DepositeComponent } from './deposite/deposite.component';
 
 import {bootstrapApplication} from '@angular/platform-browser';
-import {NgbdModalOptions} from './view/modal-options';
+
 import { NewbashboardComponent } from './newbashboard/newbashboard.component';
 import { RouterModule } from '@angular/router';
-
-
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { IconModule,IconSetService } from '@coreui/icons-angular';
+import { DepositComponent } from './deposit/deposit.component';
 
 
 export function MSALInstanceFactory():IPublicClientApplication{ 
@@ -57,7 +58,6 @@ export function MSALInstanceFactory():IPublicClientApplication{
 @NgModule({
   declarations: [
     AppComponent,
-    ViewComponent,
     LoanComponent,
     HeaderComponent,
     RootComponent,
@@ -66,6 +66,11 @@ export function MSALInstanceFactory():IPublicClientApplication{
     PayEMIComponent,
     NewbashboardComponent,
     SavingAccountComponent,
+    WithdrawComponent,
+    DepositeComponent,
+    CustomerInfoComponent,
+    DepositComponent
+    
     
   ],
   imports: [
@@ -76,9 +81,11 @@ export function MSALInstanceFactory():IPublicClientApplication{
     HttpClientModule,
     NgbModule,
     CustomerFilterComponent,
-    DepositeComponent,
     TransactionsComponent,
-    RouterModule
+    
+    RouterModule,
+    NgbModule,
+    NgbNavOutlet,
   ],
   providers: [InformationService, {
     provide:MSAL_INSTANCE,
@@ -88,4 +95,6 @@ MsalService],
   
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

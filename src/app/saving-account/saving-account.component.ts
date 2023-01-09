@@ -3,7 +3,7 @@ import { InformationService } from '../information.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 @Component({
-  selector: '[app-saving-account]',
+  selector: 'app-saving-account',
   templateUrl: './saving-account.component.html',
   styleUrls: ['./saving-account.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -27,6 +27,7 @@ export class SavingAccountComponent {
 
   constructor(private info:InformationService, modalService: NgbModal){}
   addresponse:any = true;
+  reson:any = true;
   addwithdraw:any;
 
   

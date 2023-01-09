@@ -3,14 +3,18 @@
     <input type="search" class="form-control rounded" placeholder="Search Customer" aria-label="Search" aria-describedby="search-addon" />
     <input type="search" class="form-control rounded" placeholder="Select Account Number">
     <select class="select btn-dark" data-mdb-filter="true">
-      <option value="1">Savings</option>
-      <option value="2">Loan</option>
+      <option value="1">Vehicle</option>
+      <option value="2">Home Loan</option>
+      <option value="3">Personal Loan</option>
+      <option value="4">Gold Loan</option>
+      <option value="5">Business Loan</option>
+
       
     </select>
     <button type="button" class="btn btn-outline-primary">search</button>
   </div>
   <div class="row">
-    <div class="col-sm-4" style="background-color:rgb(61, 61, 73);">CustomerInfo
+    <div class="col-sm-4" style="background-color:rgb(61, 61, 73);" ngif="individual =true ">CustomerInfo
       <div class="card">
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
@@ -26,18 +30,18 @@
         </div>
       </div>
     </div>
-  <h2>Loan Account</h2>
-  <form>
-    <div class="row">
-      <div class="form-group col">
-        <label for="inputEmail4">Account Number</label>
-        <input type="text" class="form-control" id="FirstName" readonly placeholder="123343545">
-      </div>
+    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">
+     <h2>Loan Account</h2>
+     <form>
+        <div class="form-group col">
+          <label for="inputEmail4">Account Number</label>
+          <input type="text" class="form-control" id="FirstName" readonly placeholder="123343545">
+        </div>
       <div class="form-group col">
         <label for="inputEmail4">Account Type</label>
         <input type="text" class="form-control" id="LastName" readonly placeholder="Savings">
       </div>
-     </div>
+    
       <div class="row"> 
     </div>
     <div class="form-group col">
@@ -61,7 +65,7 @@
     <button type="button" class="btn btn-dark" routerLink="Deposit">Pay EMI</button>
     <button type="button" class="btn btn-dark" routerLink="Withdraw">Clear Balance</button>
   </div>
-    
-  </form>
+</form>
   </div>
+
   

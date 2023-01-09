@@ -1,0 +1,139 @@
+<div class="container d-grid gap-2 d-md-flex justify-content-md-end">
+
+	<button type="button" class="filter btn btn-lg " data-bs-toggle="modal" (click)="reponse()">
+		<i class="fa fa-filter" aria-hidden="true"></i>
+	</button>
+	<div routerLink="AddCustomer">
+		<svg cIcon class="add_button" name="cilPlus" title="cilPlus"></svg>
+	</div>
+	<!-- <button type="button" class="btn btn-dark" routerLink="AddCustomer">Add Customer</button> -->
+
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : addresponse }">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Customer Filter</h5>
+				<button type="button" class="close" data-dismiss="modal" (click)="addresponse = false"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form (ngSubmit)="getvalue(product)" id="formfilter" method="POST" action="" #product="ngForm">
+					<div class="mb-3 row">
+						<div class="col-xs-3 col-sm-auto">
+							<span *ngIf="Custid.invalid && Custid.touched" style="color: red ; font-size: 20px;">Enter
+								Customer Id</span>
+							<input type="text" class="form-control" placeholder="Customer Id" ngModel name="Custid"
+								#Custid="ngModel" /><br>
+						</div>
+						<div class="col-xs-3 col-sm-auto">
+							<span *ngIf="Firstname.invalid && Firstname.touched"
+								style="color: red ; font-size: 20px;">Enter First name</span>
+							<input type="text" class="form-control" placeholder="First Name" ngModel name="Firstname"
+								#Firstname="ngModel" /><br>
+						</div>
+						<div class="col-xs-3 col-sm-auto">
+							<span *ngIf="DId.invalid && DId.touched" style="color: red ; font-size: 20px;">Enter
+								Status</span>
+							<input type="text" class="form-control" placeholder="Status" ngModel name="Account Number"
+								#DId="ngModel" /><br>
+						</div>
+											</div>
+
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<div class="col-xs-3 col-sm-auto">
+					<button type="button" class="btn btn-dark" (click)="getvalue(product)">Search</button>
+				</div>
+
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					(click)="addresponse = false">Close</button>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	<div class="container-fluid ">
+		<div class="row">
+			<div class="col-md-10">
+
+
+				<div class="card border border-dark" style="width: 120%;">
+					<div class="card-header">
+
+						<div class="col-md-2 left-margin content1"><b> CustId</b> </div>
+						<div class="col-md-2 content2"><b>Name </b><br>
+							<b>AcctNum </b>
+						</div>
+						<div class="col-md-2 content3"><b>Accounttype </b></div>
+						<div class="col-md-2 content4"><b>AccSubtype </b></div>
+						<div class="col-md-2 content5"><b>Status </b></div>
+						<div class="col-md-2 content6"><b>Loan </b></div>
+						<div class="col-md-2 content7"><b>Savings</b></div>
+						<div class="col-md-2 content8"><b>Action </b></div>
+
+					</div>
+
+				</div>
+				<div *ngFor="let x of users" class="card border border-dark" style="width: 120%;">
+					<div class="card-content">
+			
+						<div class="col-md-2 left-margin content1">
+							<b> {{x.cust_id}}</b>
+						</div>
+						<div class="col-md-2 content2">
+							<b>{{x.firstname}}</b> <br>
+							<b>{{x.acctnum}},{{x.accsubtype}}</b>
+						</div>
+						<div class="col-md-2 content3">
+							<b>{{x.accounttype}}</b>
+						</div>
+						<div class="col-md-2 content4">
+							<b>{{x.accsubtype}}</b>
+						</div>
+						<div class="col-md-2 content5">
+							<b>{{x.status}}</b>
+						</div>
+						<div class="col-md-2 content6">
+							<b>{{x.balance}}</b>
+						</div>
+						<div class="col-md-2 content7">
+							<b>{{x.balanceamount}}</b>
+						</div>
+
+						<div class="col-md-2 content8">
+						<div routerLink="AddCustomer" class="col-xs-1">
+							<svg cIcon class="edit_button" name="cilPencil" title="cilPencil" routerLink="AddCustomer"></svg>
+						    <!-- <svg cIcon class="delete_button" name="cilTrash" title="cilTrashn"></svg> -->
+						</div>
+						<div routerLink="Deposit" class="col-xs-1">
+							<svg cIcon class="More_button" name="cilList" title="cilPaperPlane" routerLink="Deposit"></svg>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-end">
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Previous</span>
+					</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						<span class="sr-only">Next</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
