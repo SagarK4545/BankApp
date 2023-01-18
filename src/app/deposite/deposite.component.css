@@ -12,3 +12,17 @@
 .Balance{
     color:brown;
 }
+.btn{
+    width: 45%;
+    padding-left: 10px;
+}
+h6{
+    font-family: sans-serif;
+}
+.btncolor{
+    background-color: green;
+    font-size: 20px;
+    border-radius: 18px;
+    width: 90px;
+    height: 45px;
+}

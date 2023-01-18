@@ -1,34 +1,43 @@
 <div class = "container-fluid">
   <div class="row">
-    <div class="col-sm-4" style="background-color:rgb(61, 61, 73);">CustomerInfo
-      <div class="card">
+    <div class="col-sm-4" style="background-color:rgb( 186, 200, 226); border-radius:  13px">
+  
+      <div class="card" style="margin-top: 8px; border-radius: 10px; border-color: darkslategrey;">
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
             <div class="mt-3">
-              <h4>John Doe</h4>
-              <p class="text-secondary mb-1" class="Balance">Balance :12000000</p>
-              <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-              <button class="btn btn-success">Active</button>
-              <button class="btn btn-outline-primary">Message</button>
+              <h4>Sagar Koralli</h4>
+              <h6 class="text-secondary mb-1" class="Balance">Customer Id :1001</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Account num :23456</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Firstname :sagar</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Lastname :koralli</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Email :sagarkoralli@gmail.com</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Balance :10000</h6>
+              <button class="btncolor mb-1">Active</button>
+  
             </div>
+  
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">
-      <p>You can use alternative markup without <code>ul li</code> elements</p>
+      <div>
+        <button class="btn btn-outline-primary">Active</button>
+        <button class="btn btn-outline-primary">Edit</button>
+      </div>
+    </div> 
+    <div class="col-sm-8" style="background-color:rgb(255,255,255);"> 
+      
 
 <nav ngbNav #nav="ngbNav" class="nav-tabs" routerLink="Transactions">
 	<ng-container ngbNavItem>
-		<a ngbNavLink>Transactions</a>
+		<a ngbNavLink >Transactions</a>
 		<ng-template ngbNavContent>
 		 <app-transactions></app-transactions> 	
 		</ng-template>
 	</ng-container>
 	<ng-container ngbNavItem>
-		<a ngbNavLink routerlink="/savings">Savings</a>
+		<a ngbNavLink  >Savings</a>
 		<ng-template ngbNavContent>
       <app-saving-account></app-saving-account>
 		</ng-template>
@@ -42,20 +51,9 @@
   <ng-container ngbNavItem>
 		<a ngbNavLink>Communications</a>
 		<ng-template ngbNavContent>
-			<p>
-				Communacation Documents
-			</p>
-      <table class="table table-striped">
-        <thead><tr><th>docid</th>
-          <th>Description</th>
-          <th>Link</th></tr></thead>
-        <tbody><tr>
-          <td>Wel01</td>
-        <td>Welcome Letter</td>
-        <td>www.google.com</td>
-        </tr></tbody>
-        
-      </table>
+			<!-- <app-documents></app-documents> -->
+      <app-documentnew></app-documentnew>
+      
 		</ng-template>
 	</ng-container>
 </nav>

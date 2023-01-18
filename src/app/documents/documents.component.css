@@ -1,0 +1,340 @@
+modal.right .modal-dialog {
+
+    position: fixed;
+
+    margin: auto;
+
+    width: 320px;
+
+    height: 100%;
+
+    -webkit-transform: translate3d(0%, 0, 0);
+
+        -ms-transform: translate3d(0%, 0, 0);
+
+         -o-transform: translate3d(0%, 0, 0);
+
+            transform: translate3d(0%, 0, 0);
+
+}
+
+
+
+
+.modal.right .modal-content {
+
+    height: 100%;
+
+    overflow-y: auto;
+
+}
+
+
+
+
+
+.modal.right .modal-body {
+
+    padding: 15px 15px 80px;
+
+}
+
+ 
+
+ 
+
+.modal.right.fade .modal-dialog {
+
+    right: 10px;
+
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+
+}
+
+ 
+
+.modal.right.fade.in .modal-dialog {
+
+    right: 0;
+
+}
+.modal.show{
+
+    display: block;
+    left: 130px;
+    height: 600px;
+ 
+    width: 1500px;
+    
+  /* margin: 20px; */
+}
+.modal {
+    text-align: center;
+    padding: 0!important;
+    
+  }
+  
+   .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px; /* Adjusts for spacing */
+  }
+  
+  
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    
+  }
+  
+
+.center{
+    display: flex;
+    /* position: absolute; */
+    justify-content: center; 
+    
+    
+    
+}
+
+
+body.MasterData {
+    border-bottom: solid;
+    margin-left: 0px;
+    
+}
+
+.Properties {
+    margin-left: 53%;
+    margin-bottom: 1%;
+}
+
+.Property1 {
+  padding: 10px;
+}
+
+.Property2 {
+    padding: 10px;
+  }
+
+  .Property3 {
+    padding: 10px;
+  }
+
+.ListData {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: brown;
+    text-shadow: 0px 0px 10px 0px #aeabab,
+
+}
+
+.ipMstId {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* label {
+  margin-left: 15px;
+} */
+
+.listCode {
+  margin-left: 30px;
+}
+
+.col-md-2 {
+  display: inline;
+  margin-left: 30px;
+ 
+}
+
+.ListItems {
+  display: inline;
+}
+
+.margin{
+  margin-left: 60px;
+}
+
+.margin3{
+  /* margin-left: 100px; */
+  float: right;
+  margin-right: 8%;
+}
+.delete_button{
+  color: red;
+  
+  
+}
+.edit_button{
+  color: rgb(63, 63, 185);
+  
+}
+.add_button{
+  color: green;
+  
+}
+.item2
+{
+  margin-left: 60px;
+}
+.item3{
+  margin-left: 70px;
+}
+.item4{
+  margin-left: 140px;
+}
+.item5{
+  margin-left: 180px;
+}
+
+.card-content{
+  margin-top: 10px;
+
+}
+
+.card{
+margin-bottom: 10px;
+}
+.content{
+    position: absolute;
+    left:300px;
+}
+.content1{
+    position: absolute;
+    left:50px;
+}
+.content2{
+    position: absolute;
+    left:100px;
+}
+.content3{
+    position: absolute;
+    left:170px;
+}
+.content4{
+    position: absolute;
+    left:270px;
+}
+.content5{
+    position: absolute;
+    left:450px;
+    
+}
+.fa-regular{
+width: 170px;
+height: 170px;
+}
+.shine{
+  display: flex;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.shine:hover{
+    
+    width: 25px;
+    height: 35px;
+    background-color: rgba(99, 106, 115, 0.87);
+    border-radius: 30%;
+    
+}
+
+.content6{
+    position: absolute;
+    left:490px;
+}
+
+svg{
+  height: 20px;
+  margin-left: 15px;
+}
+.first_icon{
+  margin-left: 20%;
+}
+
+hr {
+  margin: 3px;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid;
+  opacity: .25;
+}
+
+.MasterTitle {
+  color: brown;
+  font-size: 22px;
+  
+}
+
+.Icons {
+  margin-left: 80%;
+  padding-bottom: 10px;
+}
+
+.search {
+  float: right;
+}
+#SearchIcon {
+  position: absolute;
+  
+}
+
+.searchbar {
+  position: relative;
+  width: 50%;
+  
+}
+.filter_button{
+  position: absolute;
+  left: 96%;
+  top: 110px;
+  color: blue;
+  margin-top: -48px;
+  font-style: solid;
+ 
+}
+
+.col-sm-2{
+  margin-left: 15%;
+}
+.margin2 {
+  margin-left: 8%;
+}
+.listData {
+  margin-left: 7%;
+}
+
+/* .filter_form {
+  width: 50%;
+
+} */
+
+.Search_btn{
+  margin-left: 10%;
+}
+.mode{
+  position: absolute;
+  left: 75%;
+  top : 200px;
+  
+}
+.form-control{
+  width: auto;
+  
+}
+
+.size{
+  height: 100px;
+}
+
+

@@ -12,7 +12,11 @@ import { AppComponent } from './app.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { DepositComponent } from './deposit/deposit.component';
-;
+import { DocumentsComponent } from './documents/documents.component';
+import { DocumentnewComponent } from './documentnew/documentnew.component';
+import { DocumentmasterComponent } from './documentmaster/documentmaster.component';
+
+
 const routes: Routes = [
   { path : 'CustomerInfo', component:CustomerInfoComponent},
   { path : 'AddCustomer', component:AddCustomerComponent},
@@ -23,6 +27,7 @@ const routes: Routes = [
   {path: 'Savings', component:SavingAccountComponent},
   {path: 'Loans', component:LoanComponent},
   {path: 'customerdetail', component:DepositeComponent},
+   {path : 'Documents',component:DocumentmasterComponent}
  
   
   

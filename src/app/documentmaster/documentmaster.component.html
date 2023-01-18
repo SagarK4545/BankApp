@@ -1,0 +1,311 @@
+<h5>Document Master</h5>
+<!-- <div>
+<div class="add" >
+    
+    <i class="fa-solid fa-filter"></i>
+</div>
+<div class="filter">
+   
+</div>
+</div> -->
+
+<!-- filter and add Icon here  -->
+
+<div class="container d-grid gap-2 d-md-flex justify-content-md-end">
+    <div class="row">
+        <div class="col-md-2 filter" data-bs-toggle="modal" (click)="fltreponse()">
+            <!-- <svg cIcon class="Filter_button" name="cilFilter" title="cilFilter"></svg> -->
+            <i class="fa-solid fa-filter"></i>
+        </div>
+        <div class="col-md-2 add " (click)="reponse()">
+            <!-- <svg cIcon class="add_button" name="cilPlus" title="cilPlus"></svg> -->
+            <i class="fa-sharp fa-solid fa-plus"></i>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- edit document start here  -->
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : editresponse }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:  #d3ebff;">
+                <h5 class="modal-title">Edit Documents</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="editresponse = false"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- <form (ngSubmit)="filterDocument(edit)" id="formfilter" method="POST" action="" #edit="ngForm">
+                    <div class="mb-3 row">
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document name</span>
+                            <input type="text" [value]=doc_name class="form-control" placeholder="doc_name" ngModel
+                                name="doc_name" #doc_name="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span> Enter Document Desc</span>
+                            <input type="text" [value]=doc_desc class="form-control" placeholder="doc_desc" ngModel
+                                name="doc_desc" #doc_desc="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span> Enter document type</span>
+                            <input type="text" class="form-control" placeholder="doc_type" ngModel name="doc_type"
+                                #doc_type="ngModel" style="height: 70px; width: 300px;" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document temp</span>
+                            <input type="text" class="form-control" placeholder="doc_template" ngModel
+                                name="doc_template" #doc_template="ngModel" style="height: 70px; width: 300px;" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document statuscode</span>
+                            <input type="text" class="form-control" placeholder="doc_statuscode" ngModel
+                                name="doc_statuscode" #doc_statuscode="ngModel"
+                                style="height: 70px; width: 300px;" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document date</span>
+                            <input type="text" class="form-control" placeholder="doc_date" ngModel name="doc_date"
+                                #doc_date="ngModel" style="height: 70px; width: 300px;" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document id</span>
+                            <input type="text" class="form-control" placeholder="doc_id" ngModel name="doc_id"
+                                #doc_id="ngModel" style="height: 70px; width: 300px;" /><br>
+                        </div>
+                    </div>
+                </form> -->
+                <form [formGroup]="myFormGroup" #edit="ngForm" (ngSubmit)="EditDocument(edit)">
+                    <div class="mb-3 row">
+                        <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+                            <span>Enter document Id</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document Id" class="formsize"
+                                formControlName="doc_id">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+                            <span>Enter document name</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document name" class="formsize"
+                                formControlName="doc_name">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>Enter document Description</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document Description" class="formsize"
+                                formControlName="doc_desc">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>Enter document type</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document type" class="formsize"
+                                formControlName="doc_type">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>Enter document statuscode</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document statuscode" class="formsize"
+                                formControlName="doc_statuscode">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>Enter document date</span><br>
+                            <input placeholder="Enter document date" formControlName="doc_date" class="formsize">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>Enter document template</span><br>
+                            <input class="ipRcrtSta" placeholder=" Enter document template"
+                                style="width: 400px; height: 60px;" class="formsize" formControlName="doc_template">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color:  #d3ebff;">
+                <div class="col-xs-3 col-sm-auto">
+                    <button type="button" class="btn btn-dark" (click) = "EditDocument(edit)" (click) = "editresponse = false">Edit</button>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="editresponse = false">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- filter Document start here -->
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : response }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:  #d3ebff;">
+                <h5 class="modal-title">filter Documents</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="response = false" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="filterDocument(filter)" id="formfilter" method="POST" action="" #filter="ngForm">
+                    <div class="mb-3 row">
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>document Id</span>
+                            <input type="text" class="form-control" placeholder="doc_id" ngModel name="doc_id"
+                                #doc_id="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>document name</span>
+                            <input type="text" class="form-control" placeholder="doc_name" ngModel name="doc_name"
+                                #doc_name="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Document Date</span>
+                            <input type="text" class="form-control" placeholder="Doc_Date" ngModel name="doc_date"
+                                #doc_date="ngModel" /><br>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color:  #d3ebff;">
+
+                <div class="col-xs-3 col-sm-auto">
+                    <button type="button" class="btn btn-dark" (click)="filterDocument(filter)">Add</button>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="response = false">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Add Document Start here  -->
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : addresponse }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header " style="background-color:#d3ebff;">
+                <h5 class="modal-title">Add Documents</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="addresponse = false"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- <form (ngSubmit)="addDocument(Add)" id="formfilter" method="POST" action="" #Add="ngForm">
+                    <div class="mb-3 row">
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document id</span>
+                            <input type="text" class="form-control" placeholder="Enter document id" ngModel
+                                name="doc_id" #doc_id="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter document name</span>
+                            <input type="text" class="form-control" placeholder="Enter document name" ngModel
+                                name="doc_name" #doc_name="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter Document Desc</span>
+                            <input type="text" class="form-control" placeholder="Enter Document Desc" ngModel
+                                name="doc_desc" #doc_desc="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter Document Type</span>
+                            <input type="text" class="form-control" placeholder="Enter Document Type" ngModel
+                                name="doc_type" #doc_type="ngModel" /><br>
+                        </div>
+                        <div class="col-xs-3 col-sm-auto">
+                            <span>Enter Document template</span>
+                            <input type="text" class="form-control" placeholder="doc_template" ngModel
+                                name="doc_template" #doc_template="ngModel" style="height: 100px; width: 400px;" /><br>
+                        </div>
+
+                    </div>
+                </form> -->
+                <form [formGroup]="myAddGroup" #Add="ngForm" (ngSubmit)="EditDocument(Add)">
+                    <div class="mb-3 row">
+                        <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+                            <span>document Id</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document Id" class="formsize"
+                                formControlName="doc_id">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+                            <span>document name</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document name" class="formsize"
+                                formControlName="doc_name">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>document Description</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document Description" class="formsize"
+                                formControlName="doc_desc">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>document type</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document type" class="formsize"
+                                formControlName="doc_type">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>document statuscode</span><br>
+                            <input class="ipRcrtSta" placeholder="Enter document statuscode" class="formsize"
+                                formControlName="doc_statuscode">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>document date</span><br>
+                            <input placeholder="Enter document date" formControlName="doc_date" class="formsize">
+                        </div>
+                        <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+                            <span>document template</span><br>
+                            <input class="ipRcrtSta" placeholder=" Enter document template"
+                                style="width: 400px; height: 60px;" class="formsize" formControlName="doc_template">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color:  #d3ebff;">
+                <div class="md-4 row ">
+                    <div class="col-md-2 col-sm-auto">
+                        <button type="button" class="btn btn-outline-primary buttoncl"
+                            (click)="addDocument(Add)">Add</button>
+                    </div>
+                    <div class="col-md-2 col-sm-auto ">
+                        <button type="button" class="btn btn-outline-secondary space" data-dismiss="modal"
+                            (click)="addresponse = false">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- table for document start here  -->
+
+<table class="table table-hover border border-dark" style="width: 950px;">
+    <thead>
+        <tr>
+            <th scope="col">doc_id</th>
+            <th scope="col">doc_name</th>
+            <th scope="col">Doc_temp</th>
+            <th scope="col">Doc_Date</th>
+            <th scope="col">Doc_Desc</th>
+            <th scope="col">doc_statcode</th>
+            <th scope="col">Edit</th>
+            <th scope="col">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of jsonres" class="size">
+            <td>{{x.doc_id}}</td>
+            <td>{{x.doc_name}}</td>
+            <td>{{x.doc_template}}</td>
+            <td>{{x.doc_date}}</td>
+            <td>
+                <strong>{{x.Doc_Desc}} <br> {{x.Doctype}}</strong>
+            </td>
+            <td>{{x.doc_statuscode}}</td>
+            <td (click)="getEditDocument(x)"> <i class="fa-solid fa-pen-to-square"></i> </td>
+            <td (click)="deleteDocument(x.doc_id)"><i class="fa-solid fa-trash"></i> </td>
+            <td></td>
+        </tr>
+
+    </tbody>
+</table>
+<!-- <button class="btn btn-outline-primary btnsize" (click)="getMaster()">Get</button> -->

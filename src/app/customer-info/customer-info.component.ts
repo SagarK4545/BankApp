@@ -191,7 +191,7 @@ ngOnInit(){
   }
   );
   console.log
-  this.info.addProducts(this.users).subscribe(x => console.log(x))
+  // this.info.addProducts(this.users).subscribe(x => console.log(x))
    }
    getdata(){
   // this.info.getAllCustomers().pipe(map((data:any) => {

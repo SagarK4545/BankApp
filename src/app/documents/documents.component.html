@@ -1,0 +1,148 @@
+<div class="container d-grid gap-2 d-md-flex justify-content-md-end">
+
+  <button type="button" class="filter btn btn-lg " data-bs-toggle="modal" data-bs-target="#ModalFilterForm">
+    <i class="fa fa-filter" aria-hidden="true" (click)="reponse()"></i>
+    <div class="modal left" tabindex="-1" role="dialog" [ngClass]="{'show' : addresponse }">
+
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h5 class="modal-title">Search Docds</h5>
+
+            <button type="button" class="close" style="background-color: cornsilk; border-radius: 10px;"
+              data-dismiss="modal" (click)="addresponse = false" aria-label="Close">
+
+              <span aria-hidden="true">&times;</span>
+
+            </button>
+
+          </div>
+
+          <div class="modal-body">
+
+            <div>
+
+              <form (ngSubmit)="getvaule(product)" #product="ngForm">
+
+                <span *ngIf="number.invalid && number.touched" style="color: red ; font-size: 20px;">Enter Document
+                  Id</span>
+                <input type="text" class="form-control" placeholder="Account Number" ngModel name="Account Number"
+                  #number="ngModel" required /><br>
+
+                <span *ngIf="WithdrawDate.invalid && WithdrawDate.touched" style="color: red ; font-size: 20px;">Enter
+                  Document Date</span>
+                <input type="date" class="form-control" placeholder="Withdraw Date" ngModel name="Withdraw Date"
+                  #WithdrawDate="ngModel" required /><br>
+
+                <button class="btn btn-primary" style=" border-radius: 10px;" [disabled]="!product.valid">Add</button>
+
+              </form>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              (click)="addresponse = false">Close</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </button>
+  <!-- <button type="button" class="btn btn-dark" routerLink="AddCustomer">Add Customer</button> -->
+</div>
+
+<!-- <div class="container-fluid center">
+    <div class="card " style="width: Auto ; height: 100%;">
+      <div class="card-header border border-dark" style="height: 70px;">
+        <div class="col-md-2  ">
+          <b> CustId</b> 
+        </div>
+        <div class="col-md-2 ">
+          <b>DocId </b>
+        </div>
+        <div class="col-md-2 ">
+          <b>DocDate </b>
+        </div>
+        <div class="col-md-2 ">
+          <b>DocDesc </b>|
+          <b>DocDesc </b>
+        </div>
+        <div class="col-md-2 content5 ">
+          <b>Action </b>
+        </div>
+      </div>
+
+      <div *ngFor="let x of documents" class="card border border-dark" style="width: 100%;">
+        <div class="card-content " style="height: 100px;">
+          <div class="col-md-2 content1">
+            <b> {{x.custid}}</b>
+          </div>
+          <div class="col-md-2 content2">
+            <b>{{x.Docid}}</b>
+          </div>
+          <div class="col-md-2 content3">
+            <b>{{x.DocDate}}</b>
+          </div>
+          <div class="col-md-2 content4 ">
+            <b>{{x.DocDesc}}</b>,<br>
+            <b>{{x.DocType}}</b>
+          </div>
+          <div class="col-md-2 content5 shine" (click)="view()">
+            <b><i class="fa-regular fa-eye  "></i></b>
+  
+          </div>
+          <div class="col-md-2 content6 shine" (click)="download()">
+            <b><i class="fa-solid fa-download "></i></b>
+  
+          </div>
+  
+  
+  
+  
+          <div class="col-md-2 ">
+            <svg cIcon class="add_button" name="cilPlus" title="cilPlus"></svg>
+            <svg cIcon class="edit_button" name="cilPencil" title="cilPencil"></svg>
+             <svg cIcon class="delete_button" name="cilTrash" title="cilTrashn"></svg>
+             <mat-icon>delete</mat-icon> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>-->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">DocId</th>
+      <th scope="col">DocDate</th>
+     
+      <th scope="col">DocDesc</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of documents" class = "size">
+     
+      <td>{{x.Docid}}</td>
+      <td>{{x.DocDate}}</td>
+      <td>
+          <strong>{{x.DocDesc}} <br> {{x.DocType}}</strong>
+      </td>
+     
+      <td>
+          <i class="fa-regular fa-eye  "></i>
+          <i class="fa-solid fa-download "></i></td>
+      
+    </tr>
+   
+  </tbody>
+</table>

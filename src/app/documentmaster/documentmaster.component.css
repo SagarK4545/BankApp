@@ -1,0 +1,60 @@
+.table{
+    width: 600px;
+  
+    margin-left: 100px;
+}
+.filter i {
+  
+    /* text-align: center; */
+    /* line-height: 25px; */
+    font-size: 25px;
+  
+}
+.add i {
+    margin-right: 120px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+}
+.modal.show{
+
+    display: block;
+  
+  }
+  .border{
+    border-radius: 10px;
+  }
+  /* .btn{
+    margin-left: 700px;
+    width: 100px;
+    height: 30px;
+  } */
+  .buttoncl{
+    width: 80px;
+    height: 30px;
+    margin-left: 250px;
+    
+    
+  }
+
+  /* .ipRcrtSta {
+    margin-left: 10px;
+  } */
+ 
+  .space{
+    width: 80px;
+    height: 30px;
+    margin-left: 300px;
+    
+   
+  }
+  .btnsize{
+    width: 70px;
+    height: 40px;
+    margin-left: 630px;
+  }
+  .formsize{
+    width: 170px;
+    height: 35px; 
+    font-family: sans-serif;
+  }

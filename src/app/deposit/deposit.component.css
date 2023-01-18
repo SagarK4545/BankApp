@@ -23,3 +23,22 @@
 .btn{
     width: 30%;
 }
+.btn{
+    width: 45%;
+    padding-left: 10px;
+}
+.search{
+    width:95%;
+    text-align:center;
+    margin-top: 10px;
+}
+h6{
+    font-family: sans-serif;
+}
+.btncolor{
+    background-color: green;
+    font-size: 20px;
+    border-radius: 18px;
+    width: 90px;
+    height: 45px;
+}

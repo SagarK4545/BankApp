@@ -1,0 +1,21 @@
+.style i {
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+    /* margin-left: 10px; */
+    margin-right: 15px;
+    text-align: center;
+    line-height: 25px;
+}
+.modal.show{
+
+    display: block;
+  
+  }
+  .filter i {
+  
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+  
+}

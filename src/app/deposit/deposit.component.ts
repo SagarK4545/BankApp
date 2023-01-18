@@ -8,12 +8,15 @@ import { InformationService } from '../information.service';
   styleUrls: ['./deposit.component.css']
 })
 export class DepositComponent {
+  filter: any;
 
   constructor(private infro:InformationService, modalService: NgbModal){}
-  addresponse:any = true;
-  addwithdraw:any;
-  response:any = false;
-  jsonres:any = []
+  addresponse: any = true;
+  adddeposite: any;
+  response: any = false;
+  jsonres: any = []
+  filterjson:any = [];
+  Deposit:any = "Deposit";
 
 
   ackresponse(){
@@ -33,46 +36,48 @@ export class DepositComponent {
 
 
   getvalue(data:any){
+    this.adddeposite = data.value
 
-    console.log("getvalue");
+    console.log(this.adddeposite)
 
-    this.addwithdraw = data.value
-    
-    console.log(this.addwithdraw)
-
-   
-
-    this.infro.addProducts(this.addwithdraw).subscribe((response)=>{
+    this.infro.addDeposit(this.adddeposite).subscribe((response) => {
 
       console.log("response is...", response);
 
       //console.log(this.addwithdraw.getData.Value);
-
       this.jsonres = response;
+      console.log(this.jsonres)
 
       console.log(this.jsonres.balance);
-
-     
-
       console.log(this.addresponse);
 
- 
-
-      
-
-  },(error) => {
+    }, (error) => {
 
       console.log('error is ', error)
 
-  })
-
- 
-
-   this.addresponse = true;
-
- 
+    })
 
      }
+     getSearch(data: any) {
+      this.filter = data.value
+      console.log(data.value)
+  
+      // if (data.value.phone_number.length === 10){
+  
+      this.infro.getFilterData(this.filter).subscribe((response) => {
+  
+        console.log("response is...", response);
+       
+        this.filterjson = response;
+  
+        console.log(this.filterjson.balance);
+  
+      }, (error) => {
+  
+        console.log('error is ', error)
+  
+      })
+    }
 
 
 

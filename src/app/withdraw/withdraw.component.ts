@@ -10,21 +10,24 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class WithdrawComponent {
 
-  constructor(private infro:InformationService, modalService: NgbModal){}
-  addresponse:any = true;
-  addwithdraw:any;
-  response:any = false;
-  jsonres:any = []
+  constructor(private infro: InformationService, modalService: NgbModal) { }
+  addresponse: any = true;
+  addwithdraw: any;
+  filter:any;
+  response: any = false;
+  jsonres: any = [];
+  filterjson:any = [];
+  withdraw:any = "withdraw";
 
 
-  ackresponse(){
-    if (this.response === false){
+  ackresponse() {
+    if (this.response === false) {
 
       this.response = true
 
     }
 
-    else{
+    else {
 
       this.response = false
 
@@ -33,50 +36,62 @@ export class WithdrawComponent {
   }
 
 
-  getvalue(data:any){
+  getvalue(data: any) {
 
     console.log("getvalue");
 
     this.addwithdraw = data.value
-    
+
     console.log(this.addwithdraw)
 
-   
+    this.infro.addWithdraw(this.addwithdraw).subscribe((response) => {
 
-    this.infro.addProducts(this.addwithdraw).subscribe((response)=>{
-
-      console.log("response is...", response);
+      console.log("response is...", response); 
 
       //console.log(this.addwithdraw.getData.Value);
-
       this.jsonres = response;
+      console.log(this.jsonres)
 
       console.log(this.jsonres.balance);
-
-     
-
       console.log(this.addresponse);
 
- 
-
-      
-
-  },(error) => {
+    }, (error) => {
 
       console.log('error is ', error)
 
-  })
-
- 
-
-   this.addresponse = true;
-
- 
-
-     }
-
-  
+    })
   }
+
+
+
+
+  getSearch(data: any) {
+    this.filter = data.value
+    console.log(data.value)
+
+    // if (data.value.phone_number.length === 10){
+
+    this.infro.getFilterData(this.filter).subscribe((response) => {
+
+      console.log("response is...", response);
+     
+      this.filterjson = response;
+
+      console.log(this.filterjson.balance);
+
+    }, (error) => {
+
+      console.log('error is ', error)
+
+    })
+  }
+//   }else{
+//     console.log('gfd')
+//   }
+// }
+
+}
+
 
   //this.info.addProducts(this.addwithdraw).subscribe(x => console.log(x))
 

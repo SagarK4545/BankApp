@@ -1,11 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(186, 200, 226); justify-content: center;">
 
-<nav class="navbar navbar-expand-lg navbar-dark"  style="background-color:rgb(186, 200, 226); justify-content: center;">
-    
-    <div class="container-fluid">
-        <button class = btn btn-primary (click)="expanded = !expanded"><i class="fa-solid fa-bars"> Menu  </i>
-        </button>
-        <a class="navbar-brand" href="#">  JKTech Bank</a>
-        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div class="container-fluid">
+    <button class=btn btn-primary (click)="expanded = !expanded"><i class="fa-solid fa-bars"> Menu </i>
+    </button>
+    <a class="navbar-brand" href="#"> JKTech Bank</a>
+    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 
               <li class="nav-item">
@@ -22,36 +21,69 @@
               </li>
             </ul>
           </div> -->
-          <div class="col-sm-8" style="background-color:rgb(186, 200, 226);padding: 10px;;">
-            <div class="navbuttons btn-group lt-8">
-              <button type="button" class="btn btn-secondary">Home</button>
-            <br>
-              <button type="button" class="btn btn-secondary">Contact</button>
-              <button type="button" class="btn btn-secondary">About</button>
-              <button type="button" class="btn btn-secondary">News</button>
-            </div>
-          </div>  
-          <button class= " btn btn-outline-primary">logout</button>
-    
-     </div>   
+    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);padding: 10px;;">
+      <div class="navbuttons btn-group lt-8">
+        <button type="button" class="btn btn-secondary">Home</button>
+        <br>
+        <button type="button" class="btn btn-secondary">Contact</button>
+        <button type="button" class="btn btn-secondary">About</button>
+        <button type="button" class="btn btn-secondary">News</button>
+      </div>
+    </div>
+    <button class=" btn btn-outline-primary">logout</button>
 
-</nav>        
+  </div>
+
+</nav>
 <div class="main-layout">
   <aside class="sidebar" *ngIf="expanded" @slidein>
-    <ul>
-      <li routerLink="/AddCustomer" routerLinkActive=""><i class="fa-sharp fa-solid fa-address-card"></i>Add Customer</li>
-      <li routerLink="/Withdraw"><i class="fa-sharp fa-solid fa-money-bill-wave"></i>Withdrawals</li>
-      <li routerLink="/Deposits"> <i class="fa-sharp fa-solid fa-piggy-bank"></i>Deposits</li>
-      <li routerLink="/Loans"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>Loans</li>
-        <li routerLink="/customerdetail"> <i class="fa-sharp fa-solid fa-piggy-bank"></i> Customerdetails</li>
-      <li routerLink="/Savings"> <i class="fa-sharp fa-solid fa-piggy-bank"></i> Savings</li>
-      <li routerLink="/CustomerInfo"> <i class="fa-sharp fa-solid fa-money-from-bracket"></i> Customer Info</li>
+    <!-- <ul class="nav-list"  *ngFor = "let x of listItem">
+      <li class="nav-list-item" routerLink = "/{{x.name}}" routerLinkActive = "active" >
+          <i class="{{x.icon}}"></i>
+          <span>{{x.name}}</span>
+      </li>
       
+  </ul> -->
+    <ul class="nav-list">
+      <li class="nav-list-item"  >
+        <i class="fa-sharp fa-solid fa-address-card"></i>
+        <span (click) = "menudo()" routerLink="/AddCustomer" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Add Customer </span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-money-bill-wave"></i>
+        <span (click) = "menudo()" routerLink="/Withdraw" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}">Withdrawals</span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span (click) = "menudo()" routerLink="/Deposits" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Deposits</span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-money-bill-transfer"></i>
+        <span (click) = "menudo()" routerLink="/Loans" routerLinkActive="active" [queryParams] = "{ general : 'Loans'}"> Loans</span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span (click) = "menudo()" routerLink="/customerdetail" routerLinkActive="active" [queryParams] = "{ general : 'Customer'}"> Customerdetails</span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span (click) = "menudo()" routerLink="/Savings" routerLinkActive="active" [queryParams] = "{ general : 'Saving'}"> Savings</span>
+      </li>
+      <li class="nav-list-item" >
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span (click) = "menudo()" routerLink="/CustomerInfo" routerLinkActive="active" > Customer Info</span>
+      </li>
+      <li class="nav-list-item"  >
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span (click) = "menudo()" routerLink="/Documents" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Documents</span>
+      </li>
+
     </ul>
   </aside>
+
   <div class="container-fluid">
-  <section style="font-size:10px;">
-    <router-outlet></router-outlet>
-  </section>
+    <section style="font-size:10px;">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
 </div>
-</div> 

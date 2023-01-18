@@ -26,7 +26,7 @@ import { PayEMIComponent } from './pay-emi/pay-emi.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerFilterComponent } from './customer-filter/customer-filter.component';
 import { DepositeComponent } from './deposite/deposite.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import {bootstrapApplication} from '@angular/platform-browser';
 
 import { NewbashboardComponent } from './newbashboard/newbashboard.component';
@@ -35,6 +35,9 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { IconModule,IconSetService } from '@coreui/icons-angular';
 import { DepositComponent } from './deposit/deposit.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { DocumentnewComponent } from './documentnew/documentnew.component';
+import { DocumentmasterComponent } from './documentmaster/documentmaster.component';
 
 
 export function MSALInstanceFactory():IPublicClientApplication{ 
@@ -69,7 +72,10 @@ export function MSALInstanceFactory():IPublicClientApplication{
     WithdrawComponent,
     DepositeComponent,
     CustomerInfoComponent,
-    DepositComponent
+    DepositComponent,
+    DocumentsComponent,
+    DocumentnewComponent,
+    DocumentmasterComponent,
     
     
   ],
@@ -82,12 +88,13 @@ export function MSALInstanceFactory():IPublicClientApplication{
     NgbModule,
     CustomerFilterComponent,
     TransactionsComponent,
-    
+    IconModule,
     RouterModule,
     NgbModule,
     NgbNavOutlet,
+    ReactiveFormsModule,
   ],
-  providers: [InformationService, {
+  providers: [InformationService,IconSetService, {
     provide:MSAL_INSTANCE,
     useFactory:MSALInstanceFactory
   },

@@ -1,83 +1,81 @@
-<p>withdraw works!</p>
-
-<div class="container-fluid">
-    <div class="input-group col-md-6" style="padding:15px;">
-      <input type="search" class="form-control rounded" placeholder="Search Customer" aria-label="Search" aria-describedby="search-addon" />
-      <input type="search" class="form-control rounded" placeholder="Select Account Number">
-      <select class="select btn-dark" data-mdb-filter="true">
-        <option value="1">Savings</option>
-        <option value="2">Loan</option>
-        
-      </select>
-      <br>
-      <button type="button" class=" seachbtn btn btn-outline-primary">search</button>
+<form (ngSubmit)="getSearch(search)" #search="ngForm">
+  <div class="row search">
+    <div class="col">
+      <input type="number" style="float:left;" class="form-control rounded" placeholder="Search Customer id" ngModel
+        name="cust_id" #cust_id="ngModel" aria-label="Search" aria-describedby="search-addon" />
     </div>
-    
-    <div class="row">
-      <div class="col-sm-4" style="background-color:rgb(61, 61, 73);"><span style=color:blue;>CustomerInfo</span>
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-              <div class="mt-3">
-                <h4>John Doe</h4>
-                <p class="text-secondary mb-1" class="Balance">Balance :{{jsonres.balance}}</p>
-                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button class="btn btn-success">Active</button>
-                <button class="btn btn-outline-primary">Message</button>
-              </div>
-            </div>
+    <div class="col">
+      <input type="search" class="form-control rounded" placeholder="search phone number" ngModel name="phone"
+        #phone="ngModel" aria-label="Search" aria-describedby="search-addon" />
+      <br>
+    </div>
+    <div class="col">
+      <button type="button" class=" seachbtn btn btn-outline-primary" (click)="getSearch(search)">Search</button>
+    </div>
+  </div>
+</form>
+
+
+
+<div class="row">
+  <div class="col-sm-4" style="background-color:rgb( 186, 200, 226); border-radius:  13px">
+
+    <div class="card" style="margin-top: 8px; border-radius: 10px; border-color: darkslategrey;">
+      <div class="card-body">
+        <div class="d-flex flex-column align-items-center text-center">
+          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+          <div class="mt-3">
+            <h4>{{filterjson.firstname}} {{filterjson.lastname}}</h4>
+            <h5 class="text-secondary mb-1" class="Balance">Balance :{{filterjson.balance}}</h5>
+            <h6 class="text-secondary mb-1" class="Balance">loan balance :{{filterjson.loan_balance}}</h6>
+            <h6 class="text-secondary mb-1" class="Balance">Account num :{{filterjson.acctnum}}</h6>
+            <h6 class="text-secondary mb-1" class="Balance">Firstname :{{filterjson.firstname}}</h6>
+            <h6 class="text-secondary mb-1" class="Balance">phone :{{filterjson.phone}}</h6>
+            <h6 class="text-secondary mb-1" class="Balance">Email :{{filterjson.emailid}}</h6>
+
+            <button class="btncolor mb-1">{{filterjson.status}}</button>
+
           </div>
+
         </div>
-      </div>  
-      <div class="col-sm-8" style="background-color:rgb(186, 200, 226);">    
-  
-    <p>Withdraw Screen</p>
+      </div>
+    </div>
+    <div>
+
+      <button class="btn btn-outline-primary">Edit</button>
+    </div>
+  </div>
+  <div class="col-sm-8" style="background-color:rgb(255,255,255);">
+
+    <h5>Withdraw Screen</h5>
     <form (ngSubmit)="getvalue(product)" #product="ngForm">
 
 
 
-        <span *ngIf="number.invalid && number.touched" style="color: red ; font-size: 20px;">Account Number</span>
-    
-        <input type="text" class="form-control" placeholder="Account Number" ngModel name="acctnum" #number="ngModel"
-    
-          required /><br>
-    
-          <input type="text" class="form-control" placeholder="withdraw" ngModel name="txndetail" #number="ngModel"
-    
-            /><br>
-    
-        <span *ngIf="Amount.invalid && Amount.touched" style="color: red ; font-size: 20px;">Withdraw Amount</span>
-    
-        <input type="number" class="form-control" placeholder="Amount" ngModel name="withdrawamount" #Amount="ngModel"
-    
-          required /><br>
-    
-    
-    
-        <span [ngClass]="{ 'fill' : Source.invalid}" style="color: grey ; font-size: 20px;">IFSC Code</span>
-    
-        <input type="text" class="form-control" placeholder="Source" ngModel name="Source" #Source="ngModel" required /><br>
-    
-    
-    
-        <button class="btn btn-primary" [disabled]="!product.valid" (click)="ackresponse()">Add</button>
-    
+      <span>Account Number</span>
 
-    
-    
-      </form>
-  
-  
+      <input type="number" class="form-control" placeholder="Account Number" ngModel name="acctnum" #number="ngModel"
+        required /><br>
+
+      <input type="text" class="form-control" placeholder="withdraw" ngModel name="txndetail" #number="ngModel" /><br>
+
+      <span>Withdraw Amount</span>
+
+      <input type="number" class="form-control" placeholder="Amount" ngModel name="withdrawamount" #Amount="ngModel"
+        required /><br>
+
+      <button class="btn btn-outline-primary" [disabled]="!product.valid" (click)="ackresponse()">Withdraw</button>
+    </form>
+
+
   </div>
 
-  <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : response }">
+  <!-- <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show' : response }">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Customer Filter</h5>
-          <button type="button" class="close" data-dismiss="modal" (click)=" response= false"
-            aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" (click)=" response= false" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -85,13 +83,11 @@
           Balance : {{jsonres.balance}}
         </div>
         <div class="modal-footer">
-  
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"
-            (click)="response = false">Close</button>
+
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="response = false">Close</button>
         </div>
       </div>
-  
+
     </div>
-    </div>
-  </div>
-  
+  </div> -->
+</div>

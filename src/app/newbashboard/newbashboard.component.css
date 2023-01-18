@@ -1,19 +1,33 @@
 .sidebar {
     position: relative;
+    color: white;
     width: 250px;
     height: 100vh;
     background:rgb(61, 61, 73);
     
+    margin-left:10px ;
+    margin-right: 10px;
+   
+    
+    
   }
+  
   
   .main-layout {
     display: flex;
     flex-direction: row;
   }
+  .nav-list{
+    list-style: none;
+   height: 100%;
+   padding: 0%;
+   margin-bottom: 0%;
+   }
   
+/*   
   ul li {
-    list-style-type:square;
-    padding: 20px 20px;
+    list-style-type:none;
+    padding: 10px 10px;
     color:white;
   }
   
@@ -28,5 +42,41 @@
   
   header button {
     margin-right: 20px;
-  }
-  
+  } */
+  .border-white{
+    border : 1px solid white;
+}
+.side-nav-content{
+    color: white;
+    width: 230px;
+    margin-left:10px ;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.nav-list-item{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.nav-list-item:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.nav-list-item i {
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 25px;
+}
+.nav-list-item span {
+    width: 120px;
+    text-transform: capitalize;
+}
+.active{
+    background-color: green;
+}
