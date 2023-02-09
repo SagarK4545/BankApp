@@ -13,6 +13,16 @@
     width:80%;
     left: 20%;
 }
+.formsize{
+    width: 350px;
+    height: 35px; 
+    font-family: sans-serif;
+    border-radius: 8px;
+     /* border-style: groove; */
+     /* border-color: rgb(220, 214, 214); */
+     font-size: 12px;
+      font-family: sans-serif;
+  }
 
 .select {
     width: 10%;
@@ -29,9 +39,9 @@
     width: 45%;
     padding-left: 10px;
 }
-.seachbtn{
+/* .seachbtn{
  width: 80px;
-}
+} */
 .search{
     width:95%;
     text-align:center;
@@ -47,3 +57,25 @@ h6{
     width: 90px;
     height: 45px;
 }
+.fa-regular{
+    
+    font-size: 30px;
+    margin-left: 250px;
+}
+.display-mode{
+    color: green;
+}
+.searchborder{
+    /* border-style: groove;
+border-width: 3px;
+border-radius: 10px; */
+
+
+   /* border-style:  1px solid #ccc!important; */
+}
+.toast.show{
+    display: block;
+  }
+  .display-inactive{
+    color: red;
+  }

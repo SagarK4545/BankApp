@@ -63,6 +63,16 @@ export class NewbashboardComponent {
    Navimenu(Data:any){
     this.router.navigate(['/Data']);
    }
+   menusaving(){
+    this.expanded = false;
+    console.log(this.expanded)
+    this.router.navigate(['/Savings'] ,{queryParams : { general : 'Saving'}})
+   }
+   menuloan(){
+    this.expanded = false;
+    console.log(this.expanded)
+    this.router.navigate(['/Loans'] ,{queryParams : { general : 'Loans'}})
+   }
    menudo(){
     this.expanded = false;
     console.log(this.expanded)

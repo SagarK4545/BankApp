@@ -1,33 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(186, 200, 226); justify-content: center;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(134, 13, 60); justify-content: center;">
 
   <div class="container-fluid">
-    <button class=btn btn-primary (click)="expanded = !expanded"><i class="fa-solid fa-bars"> Menu </i>
+    <button class="btn btn-outline-primary" style="width: 35px;" (click)="expanded = !expanded"> <i class="fa-solid fa-bars"> </i>
     </button>
-    <a class="navbar-brand" href="#"> JKTech Bank</a>
-    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                
-              <li class="nav-item">
-                <a class="nav-link" >Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Contact</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link">About</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" >Help</a>
-              </li>
-            </ul>
-          </div> -->
-    <div class="col-sm-8" style="background-color:rgb(186, 200, 226);padding: 10px;;">
+    <a class="navbar-brand" href="#"
+      style="font-size:35px; margin-left: 40px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"> JK BANK</a>
+
+    <div class="col-sm-8 " style="padding: 10px; padding-right: 40px;">
       <div class="navbuttons btn-group lt-8">
-        <button type="button" class="btn btn-secondary">Home</button>
-        <br>
-        <button type="button" class="btn btn-secondary">Contact</button>
-        <button type="button" class="btn btn-secondary">About</button>
-        <button type="button" class="btn btn-secondary">News</button>
+        <button type="button" class="btn " style="color: white; ">Home</button>
+        <button type="button" class="btn " style="color: white;">Contact</button>
+        <button type="button" class="btn " style="color: white;">About</button>
+        <button type="button" class="btn " style="color: white; ">News</button>
       </div>
     </div>
     <button class=" btn btn-outline-primary">logout</button>
@@ -45,37 +29,41 @@
       
   </ul> -->
     <ul class="nav-list">
-      <li class="nav-list-item"  >
+      <li class="nav-list-item" routerLink="/AddCustomer" routerLinkActive="active"
+        [queryParams]="{ general : 'Outside'}" (click)="menudo()">
         <i class="fa-sharp fa-solid fa-address-card"></i>
-        <span (click) = "menudo()" routerLink="/AddCustomer" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Add Customer </span>
+        <span> Add Customer </span>
       </li>
-      <li class="nav-list-item" >
+      <li class="nav-list-item" routerLink="/Withdraw" routerLinkActive="active" [queryParams]="{ general : 'Outside'}"
+        (click)="menudo()">
         <i class="fa-sharp fa-solid fa-money-bill-wave"></i>
-        <span (click) = "menudo()" routerLink="/Withdraw" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}">Withdrawals</span>
+        <span>Withdrawals</span>
       </li>
-      <li class="nav-list-item" >
+      <li class="nav-list-item" routerLink="/Deposits" routerLinkActive="active" [queryParams]="{ general : 'Outside'}"
+        (click)="menudo()">
         <i class="fa-sharp fa-solid fa-piggy-bank"></i>
-        <span (click) = "menudo()" routerLink="/Deposits" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Deposits</span>
+        <span> Deposits</span>
       </li>
-      <li class="nav-list-item" >
+      <li class="nav-list-item" (click)="menuloan()">
         <i class="fa-sharp fa-solid fa-money-bill-transfer"></i>
-        <span (click) = "menudo()" routerLink="/Loans" routerLinkActive="active" [queryParams] = "{ general : 'Loans'}"> Loans</span>
+        <span> Loans</span>
       </li>
-      <li class="nav-list-item" >
+      <!-- <li class="nav-list-item" routerLink="/customerdetail" routerLinkActive="active" [queryParams] = "{ general : 'Customer'}" (click) = "menudo()">
         <i class="fa-sharp fa-solid fa-piggy-bank"></i>
-        <span (click) = "menudo()" routerLink="/customerdetail" routerLinkActive="active" [queryParams] = "{ general : 'Customer'}"> Customerdetails</span>
+        <span> Customerdetails</span>
+      </li> -->
+      <li class="nav-list-item" (click)="menusaving()">
+        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
+        <span> Savings</span>
       </li>
-      <li class="nav-list-item" >
+      <li class="nav-list-item" routerLink="/CustomerInfo" routerLinkActive="active" (click)="menudo()">
         <i class="fa-sharp fa-solid fa-piggy-bank"></i>
-        <span (click) = "menudo()" routerLink="/Savings" routerLinkActive="active" [queryParams] = "{ general : 'Saving'}"> Savings</span>
+        <span> Customer Info</span>
       </li>
-      <li class="nav-list-item" >
+      <li class="nav-list-item" routerLink="/Documents" routerLinkActive="active" [queryParams]="{ general : 'Outside'}"
+        (click)="menudo()">
         <i class="fa-sharp fa-solid fa-piggy-bank"></i>
-        <span (click) = "menudo()" routerLink="/CustomerInfo" routerLinkActive="active" > Customer Info</span>
-      </li>
-      <li class="nav-list-item"  >
-        <i class="fa-sharp fa-solid fa-piggy-bank"></i>
-        <span (click) = "menudo()" routerLink="/Documents" routerLinkActive="active" [queryParams] = "{ general : 'Outside'}"> Documents</span>
+        <span> Documents</span>
       </li>
 
     </ul>
@@ -83,6 +71,13 @@
 
   <div class="container-fluid">
     <section style="font-size:10px;">
+      <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+         
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav> -->
       <router-outlet></router-outlet>
     </section>
   </div>

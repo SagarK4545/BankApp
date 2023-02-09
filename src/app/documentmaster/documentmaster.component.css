@@ -1,8 +1,4 @@
-.table{
-    width: 600px;
-  
-    margin-left: 100px;
-}
+
 .filter i {
   
     /* text-align: center; */
@@ -58,3 +54,110 @@
     height: 35px; 
     font-family: sans-serif;
   }
+  .fa-trash{
+  color: red;
+  }
+  .fa-pen-to-square{
+    color: blue;
+  }
+  .fa-plus{
+    color: green;
+  }
+  .search i {
+     /* margin-right : 110px; 
+     text-align : end;
+     line-height : 20px;
+      font-size : 20px;
+      padding: 10px; */
+      text-align: end;
+    line-height: 25px;
+    font-size: 25px;
+    
+    
+    }
+
+    .typecolor{
+      color: blue;
+    }
+    .tableheader{
+      font-family: sans-serif;
+      font-size: 18px;
+      color: black;
+      /* background-color: rgba(51, 113, 143, 0.4) ; */
+      background-color: white;
+    
+    }
+    .searchborder{
+      border-style: groove;
+  border-width: 3px;
+  border-radius: 10px;
+  
+  
+     /* border-style:  1px solid #ccc!important; */
+  }
+  /* .add i {
+    
+    margin-left: 360px;
+     text-align : end;
+     line-height : 20px;
+      font-size : 20px;
+      padding: 10px;
+  }
+  .filter i{
+    
+    margin-left: 320px;
+     text-align : end;
+     line-height : 20px;
+      font-size : 20px;
+      padding: 10px;
+  } */
+  .search {
+    float: left;
+  }
+  
+  #SearchIcon {
+    position: absolute;
+  
+  }
+  .filter i {
+
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+  
+  }
+  
+  /* .col-md-4 {
+    text-align: left;
+    margin-left: 0%;
+    margin-block-start: 0%;
+  } */
+  
+  .add i {
+  
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+  }
+  
+  .fa-filter{
+    color: black;
+  }
+  .spansize{
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+  /* .fa-eye{
+    color: orange;
+  } */
+  .fa-search{
+    position: relative;
+    text-align: top;
+    /* background-color: gray;
+    color: green; */
+  }
+  .input-group-addon{
+    border: 2px;
+    color:#1a6f3f; background-color: #c1c4c9;
+  }
+  

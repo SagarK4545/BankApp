@@ -59,10 +59,10 @@
     align-items: center;
     height: 50px;
 }
-.nav-list-item:hover{
+/* .nav-list-item:hover{
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-}
+} */
 
 .nav-list-item i {
     font-size: 20px;
@@ -77,6 +77,6 @@
     width: 120px;
     text-transform: capitalize;
 }
-.active{
+/* .active{
     background-color: green;
-}
+} */

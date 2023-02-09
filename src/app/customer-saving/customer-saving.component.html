@@ -1,0 +1,33 @@
+<form [formGroup]="getSaving" #edit="ngForm">
+    <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+      <span style="font-size: 17px;">Account Number</span><br>
+      <select placeholder="Account Number" (change)="getAccountDetails($event.target)" class="formsize"
+        formControlName="acctnum">
+        <option>  </option>
+        <option *ngFor="let x of filterjson"> {{x.acctnum}}</option>
+       
+      </select>
+    </div>
+    <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+      <span style="font-size: 17px;">Account Type</span><br>
+      <input placeholder="Account Type" class="formsize" formControlName="accounttype">
+    </div>
+    <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+      <span style="font-size: 17px;">account subtype</span><br>
+      <input placeholder="account subtype" class="formsize" formControlName="accsubtype">
+    </div>
+    <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+      <span style="font-size: 17px;">balance</span><br>
+      <input placeholder="balance" class="formsize" formControlName="balance">
+    </div>
+
+    <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+      <span style="font-size: 17px;">transfer limit</span><br>
+      <input placeholder="transfer limit" class="formsize" formControlName="transfer_limit">
+    </div>
+    <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+      <span style="font-size: 17px;">branch code</span><br>
+      <input placeholder="branch code" class="formsize" formControlName="branch_code">
+    </div>
+
+  </form>

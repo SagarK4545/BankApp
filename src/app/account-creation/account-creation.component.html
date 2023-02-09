@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <br>
+    <div class="row">
+        <div class="col-sm-3" style="background-color:rgb(245, 224, 129) ;border-radius: 10px; ">
+            <h5 >CustomerInfo</h5>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                            width="150">
+                        <div class="mt-3">
+                            <button class="btn btn-success">Upload Photo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9" style="background-color:rgb(243, 237, 182) ; border-radius: 10px;">
+           
+
+            <nav ngbNav #nav="ngbNav" class="nav-tabs">
+                <ng-container ngbNavItem>
+                    <a ngbNavLink style="font-size: 15px;">Customer Info</a>
+                    <ng-template ngbNavContent>
+                        <app-add-customer></app-add-customer>
+                    </ng-template>
+                </ng-container>
+                <ng-container ngbNavItem>
+                    <a ngbNavLink style="font-size: 15px;">Account Info</a>
+                    <ng-template ngbNavContent>
+                        <!-- <app-saving-account></app-saving-account> -->
+                        <app-add-savings-account></app-add-savings-account>
+                    </ng-template>
+                </ng-container>
+               
+            </nav>
+            <div [ngbNavOutlet]="nav" class="mt-2">
+                <!-- Vertically centered modal -->
+                <div class="modal-dialog modal-dialog-centered">
+                    ...
+                </div>
+
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

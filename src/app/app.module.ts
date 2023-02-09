@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
- import { FormsModule } from '@angular/forms';
+//  import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
  import { HttpClientModule} from '@angular/common/http';
  import { InformationService } from './information.service';
+ import { ToastrModule } from 'ngx-toastr';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { FormsModule } from '@angular/forms';
+ import { DecimalPipe, NgFor } from '@angular/common';
+import { NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +34,7 @@ import { CustomerFilterComponent } from './customer-filter/customer-filter.compo
 import { DepositeComponent } from './deposite/deposite.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {bootstrapApplication} from '@angular/platform-browser';
+import { AddNewAccountComponent } from './add-new-account/add-new-account.component';
 
 import { NewbashboardComponent } from './newbashboard/newbashboard.component';
 import { RouterModule } from '@angular/router';
@@ -38,6 +45,11 @@ import { DepositComponent } from './deposit/deposit.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { DocumentnewComponent } from './documentnew/documentnew.component';
 import { DocumentmasterComponent } from './documentmaster/documentmaster.component';
+import { AccountCreationComponent } from './account-creation/account-creation.component';
+import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
+import { CustomerSavingComponent } from './customer-saving/customer-saving.component';
+import { CustomerLoanComponent } from './customer-loan/customer-loan.component';
+
 
 
 export function MSALInstanceFactory():IPublicClientApplication{ 
@@ -76,6 +88,12 @@ export function MSALInstanceFactory():IPublicClientApplication{
     DocumentsComponent,
     DocumentnewComponent,
     DocumentmasterComponent,
+    TransactionsComponent,
+    AccountCreationComponent,
+    AddSavingsAccountComponent,
+    CustomerSavingComponent,
+    CustomerLoanComponent,
+    AddNewAccountComponent
     
     
   ],
@@ -87,18 +105,26 @@ export function MSALInstanceFactory():IPublicClientApplication{
     HttpClientModule,
     NgbModule,
     CustomerFilterComponent,
-    TransactionsComponent,
+    
     IconModule,
     RouterModule,
     NgbModule,
     NgbNavOutlet,
     ReactiveFormsModule,
+    ToastrModule.forRoot({closeButton: true, timeOut: 5000, // 15 seconds      
+    progressBar: true,
+    positionClass:"toast-top-right",
+    easing:'ease-in',
+    easeTime: 1000}),
+    BrowserAnimationsModule,
+    DecimalPipe, 
+    NgFor, 
+    NgbPaginationModule, 
+    NgbTypeaheadModule,
   ],
-  providers: [InformationService,IconSetService, {
-    provide:MSAL_INSTANCE,
-    useFactory:MSALInstanceFactory
-  },
-MsalService],
+  providers: [
+
+],
   
   bootstrap: [AppComponent]
 })

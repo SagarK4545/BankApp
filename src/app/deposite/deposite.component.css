@@ -26,3 +26,11 @@ h6{
     width: 90px;
     height: 45px;
 }
+.fa-regular{
+    
+    font-size: 30px;
+    margin-left: 250px;
+}
+.display-mode{
+    color: green;
+}

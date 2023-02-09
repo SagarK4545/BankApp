@@ -19,3 +19,30 @@
     font-size: 25px;
   
 }
+.search {
+  float: left;
+}
+
+#SearchIcon {
+  position: absolute;
+
+}
+.tableheader{
+  font-family: sans-serif;
+  font-size: 18px;
+  color: green;
+  /* background-color: rgba(51, 113, 143, 0.4) ; */
+  background-color: white;
+ padding-left: 20px;
+}
+.search i {
+  margin-right : 110px; 
+  text-align : end;
+  line-height : 20px;
+   font-size : 20px;
+   padding: 10px;
+ 
+ }
+ .fa-filter{
+  color: black;
+}

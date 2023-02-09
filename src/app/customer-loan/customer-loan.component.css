@@ -1,0 +1,11 @@
+.formsize{
+    width: 350px;
+    height: 35px; 
+    font-family: sans-serif;
+  }
+  .display-inactive{
+    color: red;
+  }
+  .display-mode{
+    color: green;
+}

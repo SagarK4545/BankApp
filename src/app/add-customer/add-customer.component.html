@@ -1,98 +1,95 @@
-
-<div class="container-fluid ng-container" >
-  <h2>Account Opening Form </h2>
+<div class="container-fluid ng-container">
+  <h3 style="color:black ;font-family: sans-serif;">Account Opening Form </h3>
   <div>
-    <br/>
-    <u><h3>Personal Information</h3></u>
-    <form #gfgform = "ngForm" style="border:2px padding;">
-      <div class="row">
-        <div class="col">
-          <label for="inputEmail4">First Name</label>
-          <input type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Last Name</label>
-          <input type="text" class="form-control" placeholder="Last name">
-        </div>
-        <br>
-        <div class="col">
-          <label for="inputEmail4">Date of Birth</label>
-          <input type="date" class="form-control" placeholder="DOB">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Age</label>
-          <input type="number" class="form-control" placeholder="DOB">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label for="inputEmail4">Telephone Number</label>
-          <input type="text" class="form-control" placeholder="Mobile">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Email</label>
-          <input type="Email" class="form-control" placeholder="Last name">
-        </div>
-        <br>
-        <div class="col">
-          <label for="inputEmail4">Date of Birth</label>
-          <input type="date" class="form-control" placeholder="DOB">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Mother's Maiden Name</label>
-          <input type="text" class="form-control" placeholder="DOB">
-        </div>
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <u><h3>Address Information</h3></u>
-      <div class="row">
-        <div class="col">
-          <label for="inputEmail4">Address</label>
-          <input type="text" class="form-control" placeholder="Address1">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Address Line 2</label>
-          <input type="text" class="form-control" placeholder="AddressLine2">
-        </div>
-        <br>
-        <div class="col">
-          <label for="inputEmail4">City</label>
-          <input type="text" class="form-control" placeholder="City">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">State</label>
-          <input type="text" class="form-control" placeholder="State">
-        </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <u><h3>Account Information</h3></u>
-      <div class="row">
-        <div class="col">
-          <label for="inputEmail4">Account Type</label>
-          <input type="text" class="form-control" placeholder="Account Type">
-        </div>
-        <div class="col">
-          <label for="inputEmail4">Account Category</label>
-          <input type="dropdown" class="form-control" placeholder="Account SubType">
-        </div>
-        <br>
-        <div class="col">
-          <label for="inputEmail4">Monthly Salary</label>
-          <input type="Number" class="form-control" placeholder="Salary">
-        </div>
-      </div>
+    <br />
 
+    <h4 style="color:black;font-family: sans-serif;">Personal Information</h4>
+
+    <form (ngSubmit)="AddCustomer(product)" #product="ngForm">
+      <div class="row">
+        <div class="col-sm-3"> <!-- <span *ngIf="FirstName.invalid && FirstName.touched" style="color: red ; font-size: 20px;">Enter First
+        Name</span> -->
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput"
+              placeholder="First Name" pattern="[a-zA-Z]*" ngModel name="FirstName" #FirstName="ngModel" required /><br> <label
+              for="floatingInput">First Name</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="Last Name"
+              ngModel name="LastName" #LastName="ngModel" required /><br> <label for="floatingInput">Last Name</label>
+          </div>
+        </div> <br>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="date" id="floatingInput" class="form-control"
+              placeholder="Date of Birth" ngModel name="DOB" #DOB="ngModel" required /><br> <label
+              for="floatingInput">DOB</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <select id="floatingInput" name="MaritalStatus" ngModel class="form-control"
+              #MaritalStatus="ngModel" required>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Divorced">Divorced</option>
+            </select> <label for="floatingInput">MaritalStatus</label> </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+              placeholder="Mobile Number" pattern="[0-9]+" minlength="10" maxlength="10"  ngModel name="Phone" #Phone="ngModel" required /><br> <label
+              for="floatingInput">Mobile Number</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+              placeholder="Alternate Number" pattern="[0-9]+" minlength="10" maxlength="10" ngModel name="Mobile" #Mobile="ngModel" /><br> <label
+              for="floatingInput">Alternate Number</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="email" class="form-control" id="floatingInput"
+              placeholder="abc@gmail.com" ngModel name="EmailId" #EmailId="ngModel" required /><br> <label
+              for="floatingInput">EmailId</label> </div>
+        </div>
+      </div> <br />
+      <h4 style="color:black;font-family: sans-serif;">Address Information</h4>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="Address1"
+              ngModel name="Address1" #Address1="ngModel" required /><br> <label for="floatingInput">Address</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="Address2"
+              ngModel name="Address2" #Address2="ngModel" /><br> <label for="floatingInput">Address Line 2</label>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="floatingInput"
+            placeholder="Postal Code" ngModel name="ZIPCode" minlength="6" maxlength="6" #ZIPCode="ngModel"
+            required /><br> <label for="floatingInput">Postal Code</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+     
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="City"
+              ngModel name="City" #City="ngModel" required /><br> <label for="floatingInput">City</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="State"
+              ngModel name="State" #State="ngModel" required /><br> <label for="floatingInput">State</label> </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-floating"> <input type="text" class="form-control" id="floatingInput" placeholder="Country"
+              ngModel name="Country" #Country="ngModel" required /> <label for="floatingInput">Country</label> </div>
+        </div>
+      </div> <br>
     </form>
   </div>
-  <br>
-  <br>
+
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="button">Submit</button>
-    <button class="btn btn-danger" type="button">cancel</button>
+    <button class="btn btn-primary me-md-2" type="button" [disabled]="!product.valid" (click)="AddCustomer(product)">Save</button>
+    <!-- <button class="btn btn-danger" type="button" [disabled]="!product.valid"  (click)="changepage(product)">Next</button> -->
   </div>
 </div>
-  
+<br>

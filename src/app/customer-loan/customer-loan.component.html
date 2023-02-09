@@ -1,0 +1,33 @@
+<form [formGroup]="getSaving" #edit="ngForm">
+    <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+      <span style="font-size: 17px;">Account Number</span><br>
+      <select placeholder="Account Number" (change)="getLoandetail($event.target)" class="formsize"
+        formControlName="acctnum">
+        <option *ngFor = "let x of filterjson" style="width: 15px;" >{{x.acctnum}}</option>
+        <option> </option>
+      </select>
+    </div>
+      <div class="col-xs-3 col-sm-auto" style="margin-left: 40px;">
+        <span style="font-size: 17px;">Account Type</span><br>
+        <input placeholder="Account Type" style="border-radius: 10px; border-style: groove;" class="formsize" formControlName="accounttype">
+      </div>
+      <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+        <span style="font-size: 17px;">account subtype</span><br>
+        <input placeholder="account subtype" class="formsize"
+          formControlName="accountsubtype">
+      </div>
+      <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+        <span style="font-size: 17px;">balance</span><br>
+        <input placeholder="Balance Amount"  class="formsize" formControlName="balanceamount">
+      </div>
+
+      <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+        <span style="font-size: 17px;">EMI Amount</span><br>
+        <input placeholder="EMI Amount"  class="formsize" formControlName="emiamount">
+      </div>
+      <div class="col-xs-3 col-sm-auto" style="margin-top: 10px; margin-left: 40px;">
+        <span style="font-size: 17px;">Total Amount</span><br>
+        <input placeholder="Balance Amount"  class="formsize" formControlName="totalloanamount">
+      </div>
+  
+  </form>

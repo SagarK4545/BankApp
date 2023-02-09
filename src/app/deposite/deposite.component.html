@@ -1,75 +1,76 @@
-<div class = "container-fluid">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4" style="background-color:rgb( 186, 200, 226); border-radius:  13px">
-  
-      <div class="card" style="margin-top: 8px; border-radius: 10px; border-color: darkslategrey;">
+
+    <div class="col-sm-4" style="background-color:rgb(245, 224, 129); border-radius:  13px;  height: 420px;">
+      <div class="card" style=" background-color:rgb(255, 255, 255); border-radius: 30px; height: 420px;">
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
-            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+            <i class="fa-regular fa-circle-dot" [ngClass]="{ 'display-mode' : active }"></i>
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+              width="150">
             <div class="mt-3">
-              <h4>Sagar Koralli</h4>
-              <h6 class="text-secondary mb-1" class="Balance">Customer Id :1001</h6>
-              <h6 class="text-secondary mb-1" class="Balance">Account num :23456</h6>
-              <h6 class="text-secondary mb-1" class="Balance">Firstname :sagar</h6>
-              <h6 class="text-secondary mb-1" class="Balance">Lastname :koralli</h6>
-              <h6 class="text-secondary mb-1" class="Balance">Email :sagarkoralli@gmail.com</h6>
-              <h6 class="text-secondary mb-1" class="Balance">Balance :10000</h6>
-              <button class="btncolor mb-1">Active</button>
-  
+              <h4>{{getcustomerdetail.firstname}}</h4>
+              <h5 class="text-secondary mb-1" class="Balance">custid: {{getcustomerdetail.cust_id}} </h5>
+              <h6 class="text-secondary mb-1" class="Balance"></h6>
+              <h6 class="text-secondary mb-1" class="Balance">Account num :{{getcustomerdetail.acctnum}}</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Firstname :{{getcustomerdetail.firstname}}</h6>
+              <h6 class="text-secondary mb-1" class="Balance">phone :{{getcustomerdetail.phone}}</h6>
+              <h6 class="text-secondary mb-1" class="Balance">Email :{{getcustomerdetail.emailid}}</h6>
+
+
+
             </div>
-  
+
           </div>
         </div>
       </div>
-      <div>
-        <button class="btn btn-outline-primary">Active</button>
-        <button class="btn btn-outline-primary">Edit</button>
+
+    </div>
+    <div class="col-sm-8" style="background-color:rgb(245, 224, 129)">
+      <nav ngbNav #nav="ngbNav" class="nav-tabs" routerLink="Transactions">
+        <ng-container ngbNavItem>
+          <a ngbNavLink>Transactions</a>
+          <ng-template ngbNavContent>
+            <app-transactions></app-transactions>
+          </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+          <a ngbNavLink>Savings</a>
+          <ng-template ngbNavContent>
+            <app-customer-saving></app-customer-saving>
+          </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+          <a ngbNavLink>Loans</a>
+          <ng-template ngbNavContent>
+            <app-customer-loan></app-customer-loan>
+          </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem>
+          <a ngbNavLink>Communications</a>
+          <ng-template ngbNavContent>
+            <!-- <app-documents></app-documents> -->
+            <app-documentnew></app-documentnew>
+
+          </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem> <a ngbNavLink>Add Account</a> <ng-template ngbNavContent>
+            <!-- <app-documents></app-documents> --> <app-add-new-account></app-add-new-account> </ng-template>
+        </ng-container>
+      </nav>
+
+      <div [ngbNavOutlet]="nav" class="mt-2">
+        <!-- Vertically centered modal -->
+        <div class="modal-dialog modal-dialog-centered">
+          ...
+        </div>
+
+        <!-- Vertically centered scrollable modal -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          ...
+        </div>
       </div>
-    </div> 
-    <div class="col-sm-8" style="background-color:rgb(255,255,255);"> 
-      
-
-<nav ngbNav #nav="ngbNav" class="nav-tabs" routerLink="Transactions">
-	<ng-container ngbNavItem>
-		<a ngbNavLink >Transactions</a>
-		<ng-template ngbNavContent>
-		 <app-transactions></app-transactions> 	
-		</ng-template>
-	</ng-container>
-	<ng-container ngbNavItem>
-		<a ngbNavLink  >Savings</a>
-		<ng-template ngbNavContent>
-      <app-saving-account></app-saving-account>
-		</ng-template>
-	</ng-container>
-	<ng-container ngbNavItem>
-		<a ngbNavLink>Loans</a>
-		<ng-template ngbNavContent>
-      <app-loan></app-loan>
-		</ng-template>
-	</ng-container>
-  <ng-container ngbNavItem>
-		<a ngbNavLink>Communications</a>
-		<ng-template ngbNavContent>
-			<!-- <app-documents></app-documents> -->
-      <app-documentnew></app-documentnew>
-      
-		</ng-template>
-	</ng-container>
-</nav>
-
-<div [ngbNavOutlet]="nav" class="mt-2">
-  <!-- Vertically centered modal -->
-<div class="modal-dialog modal-dialog-centered">
-  ...
-</div>
-
-<!-- Vertically centered scrollable modal -->
-<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-  ...
-</div>
-</div>
-   </div>
+    </div>
   </div>
 
 </div>

@@ -4,8 +4,13 @@
     align-items: center;
 
 }
-.Balance{
-    color:brown;
+.searchborder{
+    border-style: groove;
+border-width: 3px;
+border-radius: 10px;
+
+
+   /* border-style:  1px solid #ccc!important; */
 }
 h6{
     font-family: sans-serif;
@@ -22,3 +27,19 @@ h6{
     text-align:center;
     margin-top: 10px;
 }
+.fa-regular{
+    
+    font-size: 30px;
+    margin-left: 250px;
+}
+.display-mode{
+    color: green;
+}
+.formsize{
+    width: 350px;
+    height: 35px; 
+    font-family: sans-serif;
+  }
+  .display-inactive{
+    color: red;
+  }

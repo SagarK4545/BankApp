@@ -15,11 +15,15 @@ import { DepositComponent } from './deposit/deposit.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { DocumentnewComponent } from './documentnew/documentnew.component';
 import { DocumentmasterComponent } from './documentmaster/documentmaster.component';
+import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
+import { AccountCreationComponent } from './account-creation/account-creation.component';
 
 
 const routes: Routes = [
   { path : 'CustomerInfo', component:CustomerInfoComponent},
-  { path : 'AddCustomer', component:AddCustomerComponent},
+  {path: 'AddSavings', component:AddSavingsAccountComponent},
+  { path : 'Customer', component:AddCustomerComponent},
+  { path : 'AddCustomer', component:AccountCreationComponent},
   {path : 'Login', component:HeaderComponent},
   {path : 'Withdraw', component:WithdrawComponent},
   {path : 'Deposits', component:DepositComponent},
@@ -27,7 +31,13 @@ const routes: Routes = [
   {path: 'Savings', component:SavingAccountComponent},
   {path: 'Loans', component:LoanComponent},
   {path: 'customerdetail', component:DepositeComponent},
-   {path : 'Documents',component:DocumentmasterComponent}
+   {path : 'Documents',component:DocumentmasterComponent},
+   
+
+
+
+   
+   
  
   
   

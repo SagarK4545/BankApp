@@ -1,0 +1,65 @@
+<div class="container-fluid ng-container">
+    <h2>Account Opening Form </h2>
+    <div> <br /> <u>
+            <h3 Savings Account Information></h3>
+        </u>
+        <form (ngSubmit)="addSavings(product)" #product="ngForm">
+            <div class="row">
+                <div class="form-floating"> <select class="select btn-dark" data-mdb-filter="true" id="floatingInput"
+                        name="accountType" ngModel class="form-control" #accountType="ngModel" required>
+                        <option></option>
+                        <option *ngFor="let x of accounttype"> {{x}}</option>
+                        <!-- <option *ngFor="let x of Types"> {{x}}</option> -->
+                    </select> <br> <label for="floatingInput">AccountType</label> </div> <br>
+                <div *ngIf="accountType.value === 'saving'">
+                    <div class="form-floating">
+
+                        <select class="select btn-dark" data-mdb-filter="true" id="floatingInput" name="accsubtype"
+                            ngModel class="form-control" #accsubtype="ngModel" required>
+                            <option *ngFor="let x of details.value">
+                                <div *ngIf="(x.accounttype === 'saving')"> {{x.accsubtype}}
+                                </div>
+                            </option>
+                        </select>
+                        <label for="floatingInput">AccountSubType</label>
+                        <br>
+                    </div>
+                    <div class="form-floating"> <input type="text" class="form-control" id="floatingInput"
+                            placeholder="Branch" ngModel name="branch_code" #branch_code="ngModel" required /><br>
+                        <label for="floatingInput">Branch</label>
+                    </div>
+                    <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+                            placeholder="TransferLimit" ngModel name="transfer_limit" #transfer_limit="ngModel"
+                            required /><br> <label for="floatingInput">Transfer Limit</label> </div>
+                </div>
+                <div *ngIf="accountType.value === 'loan'">
+                    <div class="form-floating"> <select class="select btn-dark" data-mdb-filter="true"
+                            id="floatingInput" name="AccSubType" ngModel class="form-control" #AccSubType="ngModel"
+                            required>
+                            <option *ngFor="let x of details.value">
+                                <div *ngIf="(x.accounttype === 'loan')">{{x.accsubtype}}
+                                </div>
+                            </option>
+                        </select> <br> <label for="floatingInput">AccountSubType</label> </div>
+                    <div class="form-floating"> <input type="text" class="form-control" id="floatingInput"
+                            placeholder="Branch Code" ngModel name="BranchCode" #BranchCode="ngModel" required /><br>
+                        <label for="floatingInput">Branch</label>
+                    </div>
+                    <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+                            placeholder="RateOfInterest" ngModel name="RateOfInterest" #RateOfInterest="ngModel"
+                            required /><br>
+                        <label for="floatingInput">RateOfInterest</label>
+                    </div>
+                    <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+                            placeholder="LoanDuration" ngModel name="LoanDuration" #LoanDuration="ngModel"
+                            required /><br> <label for="floatingInput">LoanDuration</label> </div>
+                    <div class="form-floating"> <input type="number" class="form-control" id="floatingInput"
+                            placeholder="TotalLoanAmount" ngModel name="TotalLoanAmount" #TotalLoanAmount="ngModel"
+                            required /><br> <label for="floatingInput">TotalLoanAmount</label> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <button class="btn btn-primary me-md-2" type="button"
+            (click)="addSavings(product)" routerlink="CustomerInfo">Submit</button> </div>
+</div><br>

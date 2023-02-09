@@ -36,3 +36,28 @@ h6{
     text-align:center;
     margin-top: 10px;
 }
+.fa-regular{
+    
+    font-size: 30px;
+    margin-left: 250px;
+}
+
+.formsize{
+    width: 350px;
+    height: 35px; 
+    font-family: sans-serif;
+  }
+  .searchborder{
+    border-style: groove;
+border-width: 3px;
+border-radius: 10px;
+
+
+   /* border-style:  1px solid #ccc!important; */
+}
+.display-inactive{
+    color: red;
+  }
+  .display-mode{
+    color: green;
+}
